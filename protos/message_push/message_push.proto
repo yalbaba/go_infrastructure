@@ -1,0 +1,122 @@
+syntax = "proto3";
+
+
+option go_package = "./message_push";
+
+service MessagePushService {
+  rpc SendNotification(NotificationContent) returns(SendResp);
+  rpc PushMessageByID(MsgID) returns(PushResp);
+  rpc PushStatistics(PushFlag) returns(PushStatisticsResp);
+  rpc SendOperateNotification(OperateNotificationContent) returns(SendResp);
+  rpc SendActivityNotification(ActivityNotificationContent) returns(SendResp);
+  rpc SendAppNotification(AppNotificationContent) returns(SendResp);
+  rpc SendUserNotification(UserNotification) returns(SendResp);
+  rpc SendPhoneMsg(SendPhoneMsgReq) returns(SendPhoneMsgResp);
+}
+
+message SendPhoneMsgReq {
+  repeated string phone_list = 1;
+  string template_code = 2;
+}
+message SendPhoneMsgResp {}
+
+message UserNotification {
+  string title = 1;
+  string body = 2;
+  repeated string push_list = 3;
+  string plat_form = 4;
+  string ext_params = 5;
+  int32 batch = 6;
+}
+
+message AppNotificationContent {
+    string user_id = 1;
+    string body = 2;
+    string title = 3;
+    string article_id = 4;
+    int32 article_type = 5;
+    string cover = 6;
+    int32 plat_form = 7;
+    string device_token = 8;
+    int32 message_id = 9;
+    int32 reason = 10;
+}
+
+message ActivityNotificationContent {
+    string title = 1;
+    string body = 2;
+    string device_token = 3;
+    string user_id = 4;
+    string plat_form = 5;
+    string ext_params = 6;
+    string activity_id = 7;
+    int32 notify_type = 8;
+}
+
+message OperateNotificationContent {
+    string title = 1;
+    string body = 2;
+    repeated string push_list = 3;
+    string plat_form = 4;
+    int32 batch = 5;
+    string ext_params = 6;
+    string push_flag = 7;
+}
+
+message NotificationContent {
+  int32 id = 1;
+  string user_id = 2;
+  string content = 3;
+  enum ArticleType {
+    NoType = 0;
+    Wiki = 10; //百科
+    Ugc = 20; //UGC故事
+    AnchorShare = 30; //直播分享的内容
+    Video = 40;
+    ClockImage = 60; //景区图片打卡
+    ClockVideo = 70; //景区视频打卡
+  }
+  ArticleType  article_type = 4;
+
+  string article_id = 5;
+
+  enum Behavior {
+    NoBehavior = 0;
+    BeFollow = 10; // 被关注
+    UgcLiked = 20; // ugc内容(故事)被点赞
+    UgcCollected = 30; // ugc内容(故事)被收藏
+    UgcCommented = 40; // ugc内容(故事)被评论
+    CommentReplied = 50; // 评论被回复
+    CommentLiked = 60; // 评论被点赞
+    AuditFailed = 70; // 审核未通过
+    BeTopicHot = 80; // 话题上热门
+    VideoCommented = 160; // 视频被评论
+    ClockImageCommented = 230; // 景区图片打卡被评论
+    ClockImageLiked = 240; // 景区图片打卡被点赞
+    ClockVideoCommented = 250; // 景区视频打卡被评论
+    ClockVideoLiked = 260; // 景区图片打卡被点赞
+  }
+
+  Behavior behavior = 6;
+  string to_user_id = 7;
+}
+
+message SendResp {
+
+}
+
+message MsgID {
+  repeated int64 msg_id = 8;
+}
+
+message PushResp {
+
+}
+
+message PushFlag{
+  repeated string push_flag = 9;
+}
+
+message PushStatisticsResp {
+
+}

@@ -1,0 +1,101 @@
+{
+  "properties": {
+    "id": {
+      "type": "long"
+    },
+    "room_name": {
+      "type": "text",
+      "analyzer": "ik_max_word",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "nation": {
+      "type": "text",
+      "analyzer": "ik_max_word",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "province": {
+      "type": "text",
+      "analyzer": "ik_max_word",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "city": {
+      "type": "text",
+      "analyzer": "ik_max_word",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "address": {
+      "type": "text",
+      "analyzer": "ik_max_word",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "location": {
+      "type": "geo_point"
+    },
+    "state": {
+      "type": "long"
+    },
+    "deleted": {
+      "type": "long"
+    },
+    "match_user_ids": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword"
+        }
+      }
+    },
+    "match_district_ids": {
+      "type": "long"
+    },
+    "data_type": {
+      "type": "long"
+    },
+    "first_id": {
+      "type": "long"
+    },
+    "second_tag_ids": {
+      "type": "long"
+    },
+    "user_id": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword"
+        }
+      }
+    },
+    "mixture_sort_time": {
+      "type": "date",
+      "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm||epoch_millis"
+    },
+    "wonderful_video_id": {
+      "type": "long"
+    }
+  }
+}

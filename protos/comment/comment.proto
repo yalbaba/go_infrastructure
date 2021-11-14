@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option go_package = "./comment";
+
+service CommentService{
+    //查询文章的评论
+    rpc QueryComment(QueryCommentReq) returns (QueryCommentRes);
+}
+
+message QueryCommentReq {
+    string article_id = 1; //文章ID
+    int32 article_type = 2; //文章类型 10 资讯 20 故事 30 主播内容分享
+    string user_id = 3; //用户ID
+}
+
+message QueryCommentRes {
+    repeated Comment comment = 1;
+    int32 page = 2;
+    int32 page_size = 3;
+    int64 count = 4;
+}
+
+message Comment{
+    string user_name = 1; //用户名
+    string user_avatar = 2; //用户头像
+    string comment = 3; //评论内容
+    int64 reply_count = 4; //回复数
+    int64 like_count = 5; //点赞数
+    bool whether_like = 6; //是否点过赞
+    int64 create_time = 7; //创建时间
+}

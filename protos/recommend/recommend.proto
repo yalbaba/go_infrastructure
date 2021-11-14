@@ -1,0 +1,107 @@
+syntax = "proto3";
+
+option go_package = "./recommend";
+
+service RecommendService {
+
+  // 收集用户行为
+  rpc CollectUserBehavior(CollectUserBehaviorReq) returns(CollectUserBehaviorResp);
+
+  // 收集用户历史浏览内容的一级标签, 后面会做多个标签,所以命名就是CollectUserHistoryTag
+  rpc CollectUserHistoryTag(CollectUserHistoryTagReq) returns(CollectUserHistoryTagResp);
+
+  // 获取推荐列表
+  rpc GetRecommendListByUserID(GetRecommendListByUserIDReq) returns(GetRecommendListByUserIDResp);
+
+  rpc GetLives(GetLivesReq) returns(GetLivesResp);
+  rpc GetVideos(GetVideosReq) returns(GetVideosResp);
+
+
+  rpc SyncLiveState(SyncLiveStateReq) returns (SyncLiveStateResp);
+
+  rpc SyncVideoState(SyncVideoStateReq) returns (SyncVideoStateResp);
+
+  rpc DeleteVideo(DeleteVideoReq) returns (DeleteVideoResp);
+
+}
+
+message CollectUserBehaviorReq {
+  int64 user_id = 1;
+  int64 video_id = 2;
+  int64 live_room_id = 3;
+  BehaviorType behavior_type = 4;
+}
+
+// 行为枚举值
+enum BehaviorType {
+  view = 0;     // 浏览
+  share = 1;    // 分享
+  collect = 2;  // 收藏
+  like = 3;     // 点赞
+  comment = 4;  // 评论
+}
+
+message CollectUserBehaviorResp {}
+
+message CollectUserHistoryTagReq {
+  int64 user_id = 1;
+  int64 tag_id = 2;
+}
+
+message CollectUserHistoryTagResp {}
+
+message GetRecommendListByUserIDReq{
+  int64 user_id = 1;
+  int64 page = 2;
+}
+
+message GetRecommendListByUserIDResp{
+  repeated int64 recommend_video = 1;
+  repeated int64 recommend_live  = 2;
+}
+
+
+
+message GetLivesReq{
+  int64 user_id = 1;
+  int64 page = 2;
+}
+
+message GetLivesResp {
+  repeated int64 list = 2;
+}
+
+message GetVideosReq {
+  int64 user_id = 1;
+  int64 page = 2;
+}
+
+message GetVideosResp{
+  repeated int64 list = 2;
+}
+
+message SyncLiveStateReq {
+  repeated int64 can_recommend_live_id = 1;
+  repeated int64 cannot_recommend_live_id = 2;
+}
+
+message SyncLiveStateResp {}
+
+message SyncVideoStateReq {
+  repeated CanRecommendVideo can_recommend_video_id = 1;
+  repeated int64 cannot_recommend_video_id = 2;
+}
+
+message CanRecommendVideo {
+    int64 video_id = 1;
+    repeated int64 tag_ids = 2;
+    int64 update_time = 3;
+}
+
+message SyncVideoStateResp{}
+
+message DeleteVideoReq {
+ int64 video_id = 1;
+}
+
+message DeleteVideoResp {}

@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+option go_package = "./guide";
+
+service GuideService {
+  // 批量获取打卡详情
+  rpc MGetClockingDetail(MGetClockingDetailReq) returns (MGetClockingDetailResp);
+  // 批量获取景区详情
+  rpc MGetLandscapeViewDetail(MGetLandscapeViewDetailReq) returns(MGetLandscapeViewDetailResp);
+  // 给景区打卡点赞
+  rpc LikeClocking(LikeClockingReq) returns(LikeClockingResp);
+}
+
+message LikeClockingReq {
+  int64 clocking_id = 1;
+  string user_id = 2;
+}
+message LikeClockingResp {}
+
+// 标签
+message Tag {
+  int32 tag_id = 1;
+  string tag_name = 2;
+}
+
+// 地点
+message Position{
+  bool foreign = 1;
+  int32 position_type = 2;
+  string lon = 3;
+  string lat = 4;
+  string nation = 5;
+  string province = 6;
+  string city = 7;
+  string county = 8;
+  string town = 9;
+  string address = 10;
+  int64 fly_to_height = 11;
+  int64 distance = 12;
+  string show_address = 13;
+  string continent = 14;
+}
+
+// 图片
+message Image{
+  string url = 1;
+  string thumb = 2;
+  int64 width = 3;
+  int64 height = 4;
+}
+
+message ClockingDetail{
+  int64 clocking_id = 1;
+  string clocking_title = 2;
+
+  Image cover_url = 3;
+
+  int32 media_type = 4;
+
+  string user_id = 5;
+  string user_name = 6;
+  string user_avatar = 7;
+  bool is_v = 8;
+  int64 view_num = 9;
+  int64 like_num = 10;
+  bool is_like = 11;
+
+  Position position = 12;
+  Tag first_tag = 13;
+
+  string publish_time = 14;
+
+  string video_duration = 15;
+
+  int32 publish_state = 16;
+  int32 state = 17;
+}
+message MGetClockingDetailReq{
+  repeated int64 ids = 1;
+  string user_id = 2;
+  string lon = 3;
+  string lat = 4;
+}
+message MGetClockingDetailResp{
+  repeated ClockingDetail docs = 1;
+}
+
+message LandscapeViewDetail{
+  int64 landscape_id = 1;
+  string landscape_name = 2;
+  string cover_url = 3;
+  Position position = 4;
+  int64 view_num = 5;
+  int32 comment_pkg_switch = 6;
+  int32 vr_tour_switch = 7;
+}
+message MGetLandscapeViewDetailReq{
+  repeated int64 ids = 1;
+  string user_id = 2;
+  string lon = 3;
+  string lat = 4;
+}
+message MGetLandscapeViewDetailResp{
+  repeated LandscapeViewDetail docs = 1;
+}

@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+option go_package = "./im";
+
+
+service IMService {
+
+  // 导入账号
+  rpc AccountImport(AccountImportReq) returns (AccountImportResp);
+
+  // 添加直播间
+  rpc AddRoom(AddRoomReq) returns(AddRoomResp);
+
+  // 删除直播间
+  rpc DestroyGroup(DestroyGroupReq) returns(DestroyGroupResp);
+
+  // 获取直播间信息
+  rpc GetGroupInfo(GetGroupInfoReq) returns(GetGroupInfoResp);
+
+  // 给用户签名
+  rpc MakeGenSig(MakeGenSigReq) returns(MakeGenSigResp);
+
+  //  管理员签名
+  rpc MakeAdminGenSig(MakeAdminGenSigReq) returns(MakeAdminGenSigResp);
+
+  rpc SendGroupMsg(SendGroupMsgReq) returns(SendGroupMsgResp);
+}
+
+message SendGroupMsgReq {
+    string live_room_id = 1;
+    string user_name = 2;
+    string user_id = 3;
+    string content = 4;
+}
+
+message SendGroupMsgResp {}
+
+message AccountImportReq {
+  string user_id = 1;
+  string user_name = 2;
+  string face_url = 3;
+}
+
+message AccountImportResp{}
+
+message AddRoomReq {
+  string owner_user_id = 1;
+  int64 room_id = 2;
+  string room_name = 3;
+}
+
+message AddRoomResp {}
+
+message DestroyGroupReq{
+  int64 room_id =1;
+}
+message DestroyGroupResp{}
+
+
+message GetGroupInfoReq {
+  repeated int64 room_id =1;
+}
+message GetGroupInfoResp {
+  repeated GroupInfo group_info =1;
+}
+
+message GroupInfo {
+  int64 room_id = 1;
+  int32 member_num =2;
+}
+
+message MakeGenSigReq {
+  string user_id = 1;
+}
+message MakeGenSigResp {
+  string sig = 1;
+}
+
+message MakeAdminGenSigReq {}
+message MakeAdminGenSigResp{
+  string sig = 1;
+}

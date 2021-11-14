@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option go_package = "./data_platform";
+
+service DataPlatformService {
+  rpc GetDayData (GetDayDataReq) returns (stream GetDayDataResp);
+}
+
+message GetDayDataReq {
+}
+
+message GetDayDataResp {
+  int64 NewUserAvg = 1;
+  float NewUserGrew = 2;
+  int64 ActiveUserAvg = 3;
+  float ActiveUserGrew = 4;
+  float RetentionRateAvg = 5;
+  float RetentionRateGrew = 6;
+  int64 Duration = 7;
+  float DurationGrew = 8;
+  int64 LiveOnlineUserAvg = 9;
+  float LiveOnlineUserGrew = 10;
+  int64 LiveWatchUserAvg = 11;
+  float LiveWatchUserGrew = 12;
+  float FrequencyAvg = 13;
+  float FrequencyGrew = 14;
+  float LaunchAvg = 15;
+  float LaunchGrew = 16;
+  int64 TotalActiveUser = 17;
+  float TotalActiveUserGrew = 18;
+  int64 TotalUser = 19;
+  int64 TotalLiveUser = 20;
+  int64 TotalWatchUser = 21;
+  int32 AppType = 22;
+}

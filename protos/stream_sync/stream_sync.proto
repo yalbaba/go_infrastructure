@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "./stream_sync";
+
+service StreamSyncService {
+    rpc Sync (SyncReq) returns (SyncResp);
+}
+
+message SyncReq {
+    int64 LiveSourceId = 1;
+}
+message SyncResp {
+}

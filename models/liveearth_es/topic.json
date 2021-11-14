@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "topic_name": {
+      "type": "text",
+      "analyzer": "ik_max_word",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "state": {
+      "type": "long"
+    },
+    "keywords": {
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "keyword": {
+          "type": "text",
+          "analyzer": "ik_max_word",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        }
+      }
+    }
+  }
+}
