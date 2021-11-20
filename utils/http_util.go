@@ -13,19 +13,14 @@ var HttpUtil = new(HttpClient)
 type HttpClient struct {
 }
 
-func (h *HttpClient) HttpPostByContentType(url string, body interface{}, contentType string) ([]byte, error) {
-
-	if contentType == "" {
-		contentType = "application/json"
-	}
-
+func (*HttpClient) HttpPost(url string, body interface{}) ([]byte, error) {
 	req := fasthttp.AcquireRequest()
 	resp := fasthttp.AcquireResponse()
 	defer func() {
 		fasthttp.ReleaseResponse(resp)
 		fasthttp.ReleaseRequest(req)
 	}()
-	req.Header.SetContentType(contentType)
+	req.Header.SetContentType("application/json")
 	req.Header.SetMethod("POST")
 
 	req.SetRequestURI(url)
@@ -39,10 +34,6 @@ func (h *HttpClient) HttpPostByContentType(url string, body interface{}, content
 		return nil, err
 	}
 	return resp.Body(), nil
-}
-
-func (h *HttpClient) HttpPost(url string, body interface{}) ([]byte, error) {
-	return h.HttpPostByContentType(url, body, "application/json")
 }
 
 func (*HttpClient) HttpGet(url string, input map[string]interface{}) ([]byte, error) {

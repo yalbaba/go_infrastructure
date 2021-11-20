@@ -448,14 +448,6 @@ const (
 	StoryKey          = "content:story:{@story_id}"              //故事详情key
 )
 
-//摄像头操控相关
-const (
-	CameraLine         = "camera:line:{@room_id}"           //摄像头操控排队（存deviceId）(redis类型：list)
-	CurCameraUser      = "camera:cur_user:{@room_id}"       //当前操作用户（deviceId）（redis类型：string）
-	CameraAccessToken  = "camera:access_token:{@plat_form}" //维护摄像头操控平台的token(redis类型：string)
-	CameraRoomResetJob = "camera:reset:{@room_id}"          //维护直播间的摄像头的重置任务的任务id(redis类型：string)
-)
-
 //推流服务相关key
 const (
 	StreamList  = "stream:list"                 //存待推流的流名称（redis类型：list）

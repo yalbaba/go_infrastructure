@@ -3,38 +3,48 @@ package app
 import (
 	"flag"
 	"fmt"
-	"liveearth/infrastructure/component"
-	"liveearth/infrastructure/config"
+	"liveearth/infrastructure/component/registry"
+
 	"liveearth/infrastructure/consts"
-	"liveearth/infrastructure/pkg/iris"
 	"liveearth/infrastructure/pkg/logfilter"
-	"liveearth/infrastructure/servers"
 	"liveearth/infrastructure/servers/cron"
-	_ "liveearth/infrastructure/servers/cron"
 	"liveearth/infrastructure/servers/http"
-	_ "liveearth/infrastructure/servers/http"
 	"liveearth/infrastructure/servers/mqc"
-	_ "liveearth/infrastructure/servers/mqc"
 	"liveearth/infrastructure/servers/nsq_consume"
-	_ "liveearth/infrastructure/servers/nsq_consume"
-	_ "liveearth/infrastructure/servers/rpc"
-	"liveearth/infrastructure/servers/websocket"
+
+	logger "github.com/sereiner/library/log"
+
+	"github.com/mikegleasonjr/workers"
+
+	"sync"
+
+	"liveearth/infrastructure/servers"
+
 	"os"
 	"os/signal"
 	"runtime/debug"
-	"sync"
 	"syscall"
-	"time"
 
 	"github.com/BurntSushi/toml"
-	_ "github.com/go-sql-driver/mysql"
-	_ "github.com/lib/pq"
-	"github.com/mikegleasonjr/workers"
 	"github.com/sereiner/library/envs"
-	logger "github.com/sereiner/library/log"
 	"github.com/takama/daemon"
 	"github.com/wule61/log"
 	"go.uber.org/zap"
+
+	"time"
+
+	"liveearth/infrastructure/component"
+	"liveearth/infrastructure/config"
+	_ "liveearth/infrastructure/servers/cron"
+	_ "liveearth/infrastructure/servers/http"
+	_ "liveearth/infrastructure/servers/mqc"
+	_ "liveearth/infrastructure/servers/nsq_consume"
+	_ "liveearth/infrastructure/servers/rpc"
+
+	"liveearth/infrastructure/pkg/iris"
+
+	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/lib/pq"
 )
 
 var configPath string
@@ -45,7 +55,6 @@ type IApp interface {
 	RegisterMqcWorker(topic string, handler workers.HandlerFunc)
 	RegisterCronJob(name string, cron string, disable bool, handler cron.Handler)
 	RegisterNsqHandler(topic, channel string, handler nsq_consume.RegistryNsqConsumerHandlerFunc, opts ...nsq_consume.ConsumerOption)
-	RegisterWsRouter(func(component.Container, websocket.IGroup))
 	RegisterMidJob(f func(component.Container))
 	GetContainer() component.Container
 
@@ -90,8 +99,10 @@ func NewUranusApp(opts ...Option) IApp {
 
 	server.Logger = logger.GetSession("system", logger.CreateSession())
 
-	server.component = component.NewComponent(server.Logger)
 	c := component.NewComponent(server.Logger)
+	if server.HasRegistry {
+		c.IRegistry = registry.NewRegistry(server.Logger)
+	}
 	server.component = c
 
 	_, err = logfilter.NewRPCLogger(server.Logger, "live", server.AppName, "c", []string{})
@@ -102,7 +113,7 @@ func NewUranusApp(opts ...Option) IApp {
 	for k, v := range server.ServerTypes {
 		server.mux.Lock()
 		if v {
-			server.servers[k] = servers.NewServer(k, server.component)
+			server.servers[k] = servers.NewServer(k, c)
 		}
 		server.mux.Unlock()
 	}
@@ -140,15 +151,6 @@ func (s *UranusApp) RegisterAPIRouter(f func(component.Container, iris.Party)) {
 
 	s.servers[consts.HttpServer].RegisterService(http.RegisterAPIFunc(f))
 
-}
-
-func (s *UranusApp) RegisterWsRouter(f func(component.Container, websocket.IGroup)) {
-
-	if s.servers[consts.WebSocketServer] == nil {
-		return
-	}
-
-	s.servers[consts.WebSocketServer].RegisterService(websocket.RegisterWsFunc(f))
 }
 
 func (s *UranusApp) RegisterMqcWorker(topic string, handler workers.HandlerFunc) {
@@ -206,6 +208,17 @@ func (s *UranusApp) start() {
 		}
 	}
 
+	if s.HasRegistry {
+		s.component.Debug("正在注册服务...")
+		if err := s.component.GetRegistry().Register(); err != nil {
+			panic(err)
+		}
+		s.component.Debugf("成功注册所有服务 services->  ")
+		for _, v := range config.C.RegisterServerList {
+			s.component.Debug("service_name: ", v.ServiceName, " | service_info: ", v.ServerInfo, " | ttl: ", v.TTl)
+		}
+	}
+
 	for i := 0; i < len(s.midJobs); i++ {
 		go s.midJobs[i](s.GetContainer())
 	}
@@ -234,8 +247,6 @@ func (s *UranusApp) freeMemory() {
 			return
 		case <-time.After(time.Second * 120):
 			debug.FreeOSMemory()
-		case <-time.After(time.Second * 10):
-			s.component.FreeWsConn()
 		}
 	}
 }

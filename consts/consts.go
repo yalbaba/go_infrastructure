@@ -26,7 +26,6 @@ const (
 	MqcServer
 	CronServer
 	NsqConsumeServer
-	WebSocketServer
 )
 
 func (s ServerType) String() string {

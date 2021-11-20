@@ -73,9 +73,6 @@ type LiveSource struct {
 	RecommendEndTime   time.Time `json:"recommend_end_time"`                     //
 	LogoPosition       int8      `json:"logo_position"`                          // logo位置： 11 左上  12 中上  13 右上   21 左下  22 中下
 	IsTranscribe       bool      `json:"is_transcribe"`                          // 是否录制
-	BirdsView          int8      `json:"birds_view"`                             // 鸟瞰 10 否 20 是
-	QueueEntry         int8      `json:"queue_entry"`
-	ScreenType         int8      `json:"screen_type"`
 }
 
 func (*LiveSource) TableName() string {

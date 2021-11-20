@@ -3,7 +3,6 @@ package rpccli
 import (
 	"context"
 	"fmt"
-	"liveearth/infrastructure/component/rpccli/balancer"
 	"liveearth/infrastructure/consts"
 	"liveearth/infrastructure/protos/data_platform"
 	"liveearth/infrastructure/protos/push_stream"
@@ -24,6 +23,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/balancer/roundrobin"
 
+	"liveearth/infrastructure/component/rpccli/balancer"
 	"liveearth/infrastructure/config"
 	"liveearth/infrastructure/protos/content"
 	"liveearth/infrastructure/protos/footprint"
@@ -49,6 +49,7 @@ type IComponentRpcClient interface {
 	GetDataPlatformServiceClient() data_platform.DataPlatformServiceClient
 	GetPushStreamServiceClient() push_stream.PushStreamServiceClient
 
+	GetClientByBalancer(names ...string) (r interface{}, err error)
 	GetClient(names ...string) (r interface{}, err error)
 	GetClientBy(name string) (r interface{}, err error)
 	SaveClientObject(name string, f func(conf config.Service) (interface{}, error)) (bool, interface{}, error)
@@ -248,9 +249,18 @@ func (s *StandardRpcClient) GetPushStreamServiceClient() push_stream.PushStreamS
 		r   interface{}
 		err error
 	)
-	r, err = s.GetClient(consts.PushStream)
-	if err != nil {
-		panic(err)
+	//判断是否开启负载均衡
+	if config.C.Registry.Balancer == "" {
+		//没开启走原来的流程
+		r, err = s.GetClient(consts.PushStream)
+		if err != nil {
+			panic(err)
+		}
+	} else {
+		r, err = s.GetClientByBalancer(consts.PushStream)
+		if err != nil {
+			panic(err)
+		}
 	}
 
 	v, ok := r.(push_stream.PushStreamServiceClient)
@@ -258,6 +268,54 @@ func (s *StandardRpcClient) GetPushStreamServiceClient() push_stream.PushStreamS
 		panic("PushStreamServiceClient not found")
 	}
 	return v
+}
+
+func (s *StandardRpcClient) GetClientByBalancer(names ...string) (r interface{}, err error) {
+
+	name := s.name
+	if len(names) > 0 {
+		name = names[0]
+	}
+
+	cc, err := balancer.B.GetConn(name)
+	if err != nil {
+		return nil, fmt.Errorf("负载均衡获取连接错误,err:%v,name:%s", err, name)
+	}
+
+	s.ccMap[name] = cc
+
+	switch name {
+	case consts.UserCliName:
+		r = user.NewUserServiceClient(cc)
+	case consts.ContentCliName:
+		r = content.NewContentServiceClient(cc)
+	case consts.ImCliName:
+		r = im.NewIMServiceClient(cc)
+	case consts.SearchCliName:
+		r = search.NewSearchServiceClient(cc)
+	case consts.MessagePushCliName:
+		r = message_push.NewMessagePushServiceClient(cc)
+	case consts.FootprintCliName:
+		r = footprint.NewFootprintServiceClient(cc)
+	case consts.CommentCliName:
+		r = comment.NewCommentServiceClient(cc)
+	case consts.StreamSyncCliName:
+		r = stream_sync.NewStreamSyncServiceClient(cc)
+	case consts.Wetoken:
+		r = wetoken.NewWeTokenServiceClient(cc)
+	case consts.Recommend:
+		r = recommend.NewRecommendServiceClient(cc)
+	case consts.Geofence:
+		r = geofence.NewGeofenceServiceClient(cc)
+	case consts.Guide:
+		r = guide.NewGuideServiceClient(cc)
+	case consts.DataPlatform:
+		r = data_platform.NewDataPlatformServiceClient(cc)
+	case consts.PushStream:
+		r = push_stream.NewPushStreamServiceClient(cc)
+	}
+
+	return r, nil
 }
 
 func (s *StandardRpcClient) GetClient(names ...string) (r interface{}, err error) {

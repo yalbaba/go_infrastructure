@@ -27,8 +27,4 @@ var (
 	// guide        80000~89999
 	ActivityFinished = &Errno{Code: 80001, Message: "活动已结束"}
 	PhoneExist       = &Errno{Code: 80002, Message: "该手机号已经报名"}
-	// camera       90000~99999
-	LineFull   = &Errno{Code: 90000, Message: "队伍已满"}
-	ErrHandler = &Errno{Code: 90001, Message: "操作员错误"}
-	LineClosed = &Errno{Code: 90002, Message: "排队已关闭"}
 )

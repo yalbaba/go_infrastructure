@@ -22,8 +22,3 @@ const (
 	FootprintOperationUnsetRecommend = 10 // 取消推荐
 	FootprintOperationSetRecommend   = 20 // 设置推荐
 )
-
-// 鸟瞰相关
-const (
-	OpenQueueTopic = `camera_open_queue_topic`
-)

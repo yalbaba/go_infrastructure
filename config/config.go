@@ -30,7 +30,22 @@ type Config struct {
 	Nsq        map[string]NsqConfig `toml:"nsq"`         // nsq生产者配置
 	NsqConsume NsqConsumeConfig     `toml:"nsq_consume"` // nsq消费服务配置
 
-	WsApi WebsocketServer `toml:"ws_api"`
+	Registry           Registry         `toml:"registry"`             //etcd注册中心（key为集群名）
+	RegisterServerList []RegisterServer `toml:"register_server_list"` //要注册的RPC服务信息集合（目前只有推流服务）
+}
+
+type Registry struct {
+	EndPoints   []string `toml:"end_points"`   //etcd的集群地址
+	UserName    string   `toml:"user_name"`    //etcd用户名（可选）
+	Password    string   `toml:"password"`     //etcd的密码（可选）
+	DialTimeout int      `toml:"dial_timeout"` //连接注册中心的超时时间
+	Balancer    string   `toml:"balancer"`     //负载均衡名称
+}
+
+type RegisterServer struct {
+	ServiceName string `toml:"service_name"` //服务的名称
+	ServerInfo  string `toml:"server_info"`  //服务的信息（json表示）
+	TTl         int64  `toml:"ttl"`          //服务的存活时间
 }
 
 type Service struct {
@@ -118,9 +133,5 @@ type GrpcService struct {
 }
 
 type APIServer struct {
-	Addr string `toml:"addr"`
-}
-
-type WebsocketServer struct {
 	Addr string `toml:"addr"`
 }

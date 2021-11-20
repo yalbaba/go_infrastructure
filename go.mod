@@ -19,36 +19,35 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385
 	github.com/etcd-io/bbolt v1.3.3
-	github.com/fasthttp-contrib/websocket v0.0.0-20160511215533-1f3b11f56072
+	github.com/fasthttp-contrib/websocket v0.0.0-20160511215533-1f3b11f56072 // indirect
 	github.com/fatih/structs v1.1.0
 	github.com/gavv/httpexpect v2.0.0+incompatible
 	github.com/go-redis/redis v6.15.8+incompatible
 	github.com/go-sql-driver/mysql v1.5.0
-	github.com/golang/protobuf v1.4.3
-	github.com/gomodule/redigo v1.8.2
-	github.com/google/go-querystring v1.1.0 // indirect
-	github.com/gorilla/websocket v1.4.2
+	github.com/golang/protobuf v1.4.1
+	github.com/gomodule/redigo v1.7.1-0.20190724094224-574c33c3df38
+	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
-	github.com/hashicorp/go-version v1.2.1
+	github.com/hashicorp/go-version v1.2.0
 	github.com/imkira/go-interpol v1.1.0 // indirect
 	github.com/iris-contrib/blackfriday v2.0.0+incompatible
 	github.com/iris-contrib/go.uuid v2.0.0+incompatible
 	github.com/iris-contrib/jade v1.1.4
 	github.com/iris-contrib/middleware/jwt v0.0.0-20191219204441-78279b78a367
 	github.com/iris-contrib/pongo2 v0.0.1
-	github.com/iris-contrib/schema v0.0.2
-	github.com/json-iterator/go v1.1.10
+	github.com/iris-contrib/schema v0.0.1
+	github.com/json-iterator/go v1.1.11
 	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
-	github.com/kataras/golog v0.0.18
-	github.com/kataras/neffos v0.0.16
+	github.com/kataras/golog v0.0.10
+	github.com/kataras/neffos v0.0.12
 	github.com/kataras/sitemap v0.0.5
 	github.com/kayon/iploc v0.0.0-20200312105652-bda3e968a794
-	github.com/klauspost/compress v1.10.10
+	github.com/klauspost/compress v1.10.4
 	github.com/kr/beanstalk v0.0.0-20180818045031-cae1762e4858 // indirect
 	github.com/lib/pq v1.8.0
 	github.com/mattn/go-colorable v0.1.6 // indirect
-	github.com/mediocregopher/radix/v3 v3.5.2
-	github.com/microcosm-cc/bluemonday v1.0.3
+	github.com/mediocregopher/radix/v3 v3.3.0
+	github.com/microcosm-cc/bluemonday v1.0.2
 	github.com/mikegleasonjr/workers v0.0.0-20160423133324-427fa99d3a43
 	github.com/moul/http2curl v1.0.0 // indirect
 	github.com/nats-io/nats-server/v2 v2.1.7 // indirect
@@ -61,8 +60,7 @@ require (
 	github.com/satori/go.uuid v1.2.0
 	github.com/schollz/closestmatch v2.1.0+incompatible
 	github.com/sereiner/library v0.0.0-20200518095232-1fa3e640cc5f
-	github.com/sereiner/parrot v0.0.0-20200113065049-8fa8276ce508
-	github.com/sergi/go-diff v1.2.0 // indirect
+	github.com/sergi/go-diff v1.1.0 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/stretchr/testify v1.7.0
 	github.com/takama/daemon v0.12.0
@@ -79,12 +77,12 @@ require (
 	github.com/zlyuancn/zjve2 v0.0.0-20201204133953-06c9a3f84421
 	github.com/zlyuancn/zstr v0.0.0-20210122083009-10dd23066b74
 	go.mongodb.org/mongo-driver v1.3.5
-	go.uber.org/zap v1.15.0
-	golang.org/x/crypto v0.0.0-20200728195943-123391ffb6de
-	golang.org/x/net v0.0.0-20200707034311-ab3426394381
-	golang.org/x/sync v0.0.0-20200317015054-43a5402ce75a
-	golang.org/x/text v0.3.3
-	golang.org/x/time v0.0.0-20200630173020-3af7569d3a1e
+	go.uber.org/zap v1.17.0
+	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0
+	golang.org/x/net v0.0.0-20210405180319-a5a99cb37ef4
+	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
+	golang.org/x/text v0.3.5
+	golang.org/x/time v0.0.0-20210220033141-f8bda1e9f3ba
 	google.golang.org/grpc v1.27.0
 	google.golang.org/protobuf v1.25.0
 	gopkg.in/ini.v1 v1.57.0

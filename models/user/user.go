@@ -29,7 +29,6 @@ type DeviceData struct {
 	DeviceType  string `json:"device_type"`  // 手机型号：如 min 9
 	DeviceBrand string `json:"device_brand"` // 手机厂商 ：如 huawei,ios，xiaomi
 	Platform    int    `json:"platform"`     // 平台: 20=安卓; 30=ios; 40=web
-	AnonymousId string `json:"anonymous_id"` // 神策匿名ID
 }
 
 func GetToken(userInfo *UserInfo) string {

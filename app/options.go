@@ -8,6 +8,7 @@ type option struct {
 	ServerTypes map[consts.ServerType]bool
 	IsDebug     bool
 	Trace       string
+	HasRegistry bool
 }
 
 type Option func(*option)
@@ -53,8 +54,8 @@ func WithNsqConsume() Option {
 	}
 }
 
-func WithWebsocket() Option {
+func WithRegistry() Option {
 	return func(o *option) {
-		o.ServerTypes[consts.WebSocketServer] = true
+		o.HasRegistry = true
 	}
 }

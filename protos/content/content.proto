@@ -44,9 +44,7 @@ service ContentService {
   rpc GetVideoById(GetVideoByIdReq) returns (GetVideoByIdResp);
 
   // 给用户发放优惠券
-
-  // rpc TakenYouZanCoupon(TakenYouZanCouponReq) returns (TakenYouZanCouponResp);
-
+  rpc TakenYouZanCoupon(TakenYouZanCouponReq) returns (TakenYouZanCouponResp);
 }
 
 message TakenYouZanCouponReq {
@@ -191,7 +189,6 @@ message GetLiveRoomDetailByIDResp{
   int64 like_num = 16;
   int64 look_num = 17;
   int32 state = 18;
-  int32 queue_entry = 19;
 }
 
 message CreateLiveRoomReq {

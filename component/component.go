@@ -2,49 +2,59 @@ package component
 
 import (
 	"fmt"
+	"liveearth/infrastructure/component/orm"
+	"liveearth/infrastructure/component/registry"
+	"liveearth/infrastructure/protos/data_platform"
+	"liveearth/infrastructure/protos/push_stream"
+	"reflect"
+	"time"
+
+	"gorm.io/gorm"
+
+	nnsq "github.com/nsqio/go-nsq"
+
+	"liveearth/infrastructure/component/nsq"
+	"liveearth/infrastructure/pkg/iris"
+	"liveearth/infrastructure/protos/geofence"
+	"liveearth/infrastructure/protos/guide"
+	"liveearth/infrastructure/protos/recommend"
+	"liveearth/infrastructure/protos/wetoken"
+
+	logger "github.com/sereiner/library/log"
+
+	"liveearth/infrastructure/component/mg"
+	"liveearth/infrastructure/component/mq"
+	"liveearth/infrastructure/pkg/errno"
+	"liveearth/infrastructure/protos/comment"
+	"liveearth/infrastructure/protos/stream_sync"
+	"liveearth/infrastructure/utils"
+
+	"github.com/sereiner/library/types"
+
+	"go.mongodb.org/mongo-driver/mongo"
+
 	"liveearth/infrastructure/component/cache"
 	idb "liveearth/infrastructure/component/db"
 	"liveearth/infrastructure/component/es"
-	"liveearth/infrastructure/component/mg"
-	"liveearth/infrastructure/component/mq"
-	"liveearth/infrastructure/component/nsq"
-	"liveearth/infrastructure/component/orm"
 	"liveearth/infrastructure/component/rpccli"
 	iuser "liveearth/infrastructure/models/user"
-	"liveearth/infrastructure/pkg/errno"
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/protos/comment"
 	"liveearth/infrastructure/protos/content"
-	"liveearth/infrastructure/protos/data_platform"
 	"liveearth/infrastructure/protos/footprint"
-	"liveearth/infrastructure/protos/geofence"
-	"liveearth/infrastructure/protos/guide"
 	"liveearth/infrastructure/protos/im"
 	"liveearth/infrastructure/protos/message_push"
-	"liveearth/infrastructure/protos/push_stream"
-	"liveearth/infrastructure/protos/recommend"
 	"liveearth/infrastructure/protos/search"
-	"liveearth/infrastructure/protos/stream_sync"
 	"liveearth/infrastructure/protos/user"
-	"liveearth/infrastructure/protos/wetoken"
-	"liveearth/infrastructure/servers/websocket/conn"
-	"liveearth/infrastructure/utils"
-	"reflect"
-	"sync"
-	"time"
+
+	jsoniter "github.com/json-iterator/go"
 
 	"github.com/asaskevich/govalidator"
 	"github.com/go-redis/redis"
 	"github.com/iris-contrib/middleware/jwt"
-	jsoniter "github.com/json-iterator/go"
-	nnsq "github.com/nsqio/go-nsq"
+
 	"github.com/olivere/elastic/v7"
 	"github.com/sereiner/library/db"
-	logger "github.com/sereiner/library/log"
-	"github.com/sereiner/library/types"
-	"go.mongodb.org/mongo-driver/mongo"
+
 	"golang.org/x/sync/errgroup"
-	"gorm.io/gorm"
 )
 
 // Container 容器接口, 需要的组件在这里添加
@@ -59,11 +69,7 @@ type Container interface {
 	Bind(ctx iris.Context, obj interface{}) error
 	GetUserInfo(ctx iris.Context) (*iuser.UserInfo, error)
 	GetRealIP(ctx iris.Context) string
-
-	SaveConn(connObj conn.IConn)
-	DeleteConn(id string)
-	GetConns() []conn.IConn
-	GetConnById(id string) conn.IConn
+	RefreshWeight(target string, server string) error
 
 	GetUserServiceClient() user.UserServiceClient
 	GetIMServiceClient() im.IMServiceClient
@@ -91,16 +97,12 @@ type IComponent interface {
 	GetRegularMQ(names ...string) mq.Mq
 	GetRegularMongo(names ...string) (d *mongo.Client)
 	GetNsq(names ...string) *nnsq.Producer
+	GetRegistry() registry.IRegistry
+	RefreshWeight(target string, server string) error
 
 	Bind(ctx iris.Context, obj interface{}) error
 	GetUserInfo(ctx iris.Context) (*iuser.UserInfo, error)
 	GetRealIP(ctx iris.Context) string
-
-	SaveConn(connObj conn.IConn)
-	DeleteConn(id string)
-	GetConns() []conn.IConn
-	GetConnById(id string) conn.IConn
-	FreeWsConn()
 
 	GetUserServiceClient() user.UserServiceClient
 	GetIMServiceClient() im.IMServiceClient
@@ -130,7 +132,7 @@ type component struct {
 	mg.IComponentMongo
 	nsq.IComponentNsq
 	rpccli.IComponentRpcClient
-	conns sync.Map
+	registry.IRegistry
 	*logger.Logger
 }
 
@@ -144,7 +146,6 @@ func NewComponent(logger *logger.Logger) *component {
 		IComponentMongo:     mg.NewStandardMg(),
 		IComponentNsq:       nsq.NewNsqProducer(),
 		IComponentRpcClient: rpccli.NewStandardRpcClient(),
-		conns:               sync.Map{},
 		Logger:              logger,
 	}
 
@@ -216,7 +217,6 @@ func (c *component) GetUserInfo(ctx iris.Context) (*iuser.UserInfo, error) {
 		DeviceType:  ctx.GetHeader("device_type"),
 		DeviceBrand: ctx.GetHeader("device_brand"),
 		Platform:    types.GetInt(ctx.GetHeader("platform")),
-		AnonymousId: types.GetString(ctx.GetHeader("anonymous_id")),
 	}
 
 	token, ok := ctx.Values().Get("jwt").(*jwt.Token)
@@ -238,30 +238,12 @@ func (c *component) GetUserInfo(ctx iris.Context) (*iuser.UserInfo, error) {
 	return u, nil
 }
 
-func (c *component) SaveConn(connObj conn.IConn) {
-	c.conns.Store(connObj.GetDeviceId(), connObj)
+func (c *component) GetRegistry() registry.IRegistry {
+	return c.IRegistry
 }
 
-func (c *component) DeleteConn(id string) {
-	c.conns.Delete(id)
-}
-
-func (c *component) GetConns() []conn.IConn {
-	var list []conn.IConn
-	c.conns.Range(func(key, value interface{}) bool {
-		list = append(list, value.(conn.IConn))
-		return true
-	})
-
-	return list
-}
-
-func (c *component) GetConnById(id string) conn.IConn {
-	v, ok := c.conns.Load(id)
-	if !ok {
-		return nil
-	}
-	return v.(conn.IConn)
+func (c *component) RefreshWeight(target string, server string) error {
+	return c.GetRegistry().RefreshWeight(target, server)
 }
 
 func (c *component) Close() {
@@ -280,32 +262,13 @@ func (c *component) Close() {
 		return nil
 	})
 	g.Go(func() error {
-		c.conns.Range(func(key, value interface{}) bool {
-			conn := value.(conn.IConn)
-			conn.Close()
-			return true
-		})
-		c.conns = sync.Map{}
-		return nil
+		if c.IRegistry == nil {
+			return nil
+		}
+		return c.IRegistry.Close()
 	})
 	_ = g.Wait()
 
-}
-
-func (c *component) FreeWsConn() {
-	c.conns.Range(func(key, value interface{}) bool {
-		connObj := value.(conn.IConn)
-		err := connObj.Send("Ping", struct {
-			Value string `json:"value"`
-		}{Value: "Pong"})
-		if err != nil {
-			c.Debugf("[%s]此连接已经关闭，正在清除...", connObj.GetID())
-			connObj.Close()
-			c.conns.Delete(key)
-		}
-
-		return true
-	})
 }
 
 func init() {
