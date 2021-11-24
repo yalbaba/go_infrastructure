@@ -14,7 +14,7 @@ import (
 
 const (
 	OssRegion          = "oss-cn-hangzhou"
-	OssAccessKeyID     = "LTAI4G125o6Yxa3WZswiRFgG"
+	OssAccessKeyID     = "?"
 	OssAccessKeySecret = "jUi25EZJbAjau4LJB90MyXk6QjQsSC"
 	OssRoleArn         = "acs:ram::1762212371458479:role/oss-user"
 	OssSessionName     = "earthlive_ugc_user"
@@ -40,7 +40,7 @@ type OssConf struct {
 
 var ossBaseConf = OssBaseConf{
 	OssRegion:          "cn-hangzhou",
-	OssAccessKeyID:     "LTAI4G125o6Yxa3WZswiRFgG",
+	OssAccessKeyID:     "?",
 	OssAccessKeySecret: "jUi25EZJbAjau4LJB90MyXk6QjQsSC",
 	OssRoleArn:         "acs:ram::1762212371458479:role/oss-user",
 	OssSessionName:     "earthlive_ugc_user",
