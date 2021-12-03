@@ -2,31 +2,24 @@ package component
 
 import (
 	"fmt"
+	"gorm.io/gorm"
 	"liveearth/infrastructure/component/orm"
 	"liveearth/infrastructure/component/registry"
-	"liveearth/infrastructure/protos/data_platform"
+	iuser "liveearth/infrastructure/models/user"
 	"liveearth/infrastructure/protos/push_stream"
 	"reflect"
 	"time"
-
-	"gorm.io/gorm"
 
 	nnsq "github.com/nsqio/go-nsq"
 
 	"liveearth/infrastructure/component/nsq"
 	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/protos/geofence"
-	"liveearth/infrastructure/protos/guide"
-	"liveearth/infrastructure/protos/recommend"
-	"liveearth/infrastructure/protos/wetoken"
 
 	logger "github.com/sereiner/library/log"
 
 	"liveearth/infrastructure/component/mg"
 	"liveearth/infrastructure/component/mq"
 	"liveearth/infrastructure/pkg/errno"
-	"liveearth/infrastructure/protos/comment"
-	"liveearth/infrastructure/protos/stream_sync"
 	"liveearth/infrastructure/utils"
 
 	"github.com/sereiner/library/types"
@@ -37,13 +30,6 @@ import (
 	idb "liveearth/infrastructure/component/db"
 	"liveearth/infrastructure/component/es"
 	"liveearth/infrastructure/component/rpccli"
-	iuser "liveearth/infrastructure/models/user"
-	"liveearth/infrastructure/protos/content"
-	"liveearth/infrastructure/protos/footprint"
-	"liveearth/infrastructure/protos/im"
-	"liveearth/infrastructure/protos/message_push"
-	"liveearth/infrastructure/protos/search"
-	"liveearth/infrastructure/protos/user"
 
 	jsoniter "github.com/json-iterator/go"
 
@@ -71,19 +57,6 @@ type Container interface {
 	GetRealIP(ctx iris.Context) string
 	RefreshWeight(target string, server string) error
 
-	GetUserServiceClient() user.UserServiceClient
-	GetIMServiceClient() im.IMServiceClient
-	GetContentServiceClient() content.ContentServiceClient
-	GetSearchServiceClient() search.SearchServiceClient
-	GetMessagePushServiceClient() message_push.MessagePushServiceClient
-	GetFootprintServiceClient() footprint.FootprintServiceClient
-	GetCommentServiceClient() comment.CommentServiceClient
-	GetStreamSyncServiceClient() stream_sync.StreamSyncServiceClient
-	GetWeTokenServiceClient() wetoken.WeTokenServiceClient
-	GetRecommendServiceClient() recommend.RecommendServiceClient
-	GetGeofenceServiceClient() geofence.GeofenceServiceClient
-	GetGuideServiceClient() guide.GuideServiceClient
-	GetDataPlatformServiceClient() data_platform.DataPlatformServiceClient
 	GetPushStreamServiceClient() push_stream.PushStreamServiceClient
 	logger.ILogger
 }
@@ -104,19 +77,6 @@ type IComponent interface {
 	GetUserInfo(ctx iris.Context) (*iuser.UserInfo, error)
 	GetRealIP(ctx iris.Context) string
 
-	GetUserServiceClient() user.UserServiceClient
-	GetIMServiceClient() im.IMServiceClient
-	GetContentServiceClient() content.ContentServiceClient
-	GetSearchServiceClient() search.SearchServiceClient
-	GetMessagePushServiceClient() message_push.MessagePushServiceClient
-	GetFootprintServiceClient() footprint.FootprintServiceClient
-	GetCommentServiceClient() comment.CommentServiceClient
-	GetStreamSyncServiceClient() stream_sync.StreamSyncServiceClient
-	GetWeTokenServiceClient() wetoken.WeTokenServiceClient
-	GetRecommendServiceClient() recommend.RecommendServiceClient
-	GetGeofenceServiceClient() geofence.GeofenceServiceClient
-	GetGuideServiceClient() guide.GuideServiceClient
-	GetDataPlatformServiceClient() data_platform.DataPlatformServiceClient
 	GetPushStreamServiceClient() push_stream.PushStreamServiceClient
 
 	logger.ILogger

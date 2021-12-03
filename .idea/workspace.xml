@@ -1,13 +1,278 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2301e69f-ecfe-41cb-8545-6252172ce1ef" name="默认更改列表" comment="init" />
+    <list default="true" id="2301e69f-ecfe-41cb-8545-6252172ce1ef" name="默认更改列表" comment="修改文件">
+      <change beforePath="$PROJECT_DIR$/.idea/go_infrastructure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go_infrastructure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/component.go" beforeDir="false" afterPath="$PROJECT_DIR$/component/component.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/rpccli/balancer/smooth_roundrobin/smooth_roundrobin.go" beforeDir="false" afterPath="$PROJECT_DIR$/component/rpccli/balancer/smooth_roundrobin/smooth_roundrobin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/rpccli/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/component/rpccli/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/activity.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/app_update.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/audit_opinion.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/behavior.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/common.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/consts/consts.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/footprint.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/geo.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/guide_key.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/image.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/message_push.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/nsq_topic.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/position.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/position_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/queue_key.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/redis_key.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/rpc_client_name.go" beforeDir="false" afterPath="$PROJECT_DIR$/consts/rpc_client_name.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/topic_history.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/activity/tokyo_olympic_base.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/activity/tokyo_olympic_h5_statistic.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/activity/tokyo_olympic_live_room.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/activity/tokyo_olympic_province_assistance.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/activity/tokyo_olympic_statistic.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/activity/tokyo_olympic_user_assistance.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/admin_user/admin_user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_advise.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_base.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_day.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_locky_partake.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_lucky_user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_prize.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_prize_take_log.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_record.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_share_record.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_share_statistics.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_statistics.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_step.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/activity_user_coupon.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/clocking.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/clocking_audit_opinion.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/clocking_media_detail.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/clocking_topic.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/comment_pkg.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/data_struct.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/landscape.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/landscape_goods_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/landscape_hot_recommend.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/landscape_imgs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/landscape_live.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/landscape_live_recommend.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/landscape_notice.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/landscape_view.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/landscape_vr_h5.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/landscape_vr_recommend.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/scenery.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/scenery_comment.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/task_clocking_robot_like.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/viewpoint.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/voice_convert_queue.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/guide/vr_video_match_url.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/app_user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/app_user.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/clocking.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/clocking.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/district.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/district.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/encyclopedias.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/encyclopedias.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/footprint.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/footprint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/landscape.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/landscape.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/live_room.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/live_room.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/topic.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/topic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/video.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_es/video.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/activity.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/activity_payload.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/admin_message_push.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/admin_push_template.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/app_config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/app_config_cache.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/app_config_payload.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/app_down_channel.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/app_update.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/app_update_channel.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/app_update_channel_cache.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/audit_opinion.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/authority_authorization.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/authority_company.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/authority_department.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/authority_factor.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/authority_resource.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/authority_role.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/authority_route.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/authority_user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/base_dictionary_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/base_wx_template_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/cold_boot_tags.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/column_statistic.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/columns.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/columns_tags.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/custom_barrage.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/data_channel_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/data_config_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/data_day_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/data_portrait_distribution.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/data_province_distribution.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/data_retention_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/data_top_channel_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/data_week_user_distribution.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/encyclopedia.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/encyclopedia_tag_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/european_cup.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/european_cup_log.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/footprint.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/footprint_audit_opinion.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/footprint_label.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/footprint_media_detail.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/footprint_recommend_history.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/footprint_tag_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/home_page_column.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/hot_search_word.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/icon_config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/im_barrage.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/keywords.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_anchor_comment.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_banner.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_classification_room_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_comment.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_cyclopedia.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_district.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_playback.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_room.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_room_collection.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_room_collection_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_room_common_goods.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_room_goods_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_room_open_time.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_room_share.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_room_share_content.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_room_share_product.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_room_special_subject_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_room_statistics_detail.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_room_watch_statistics.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_share_poster_backgroud.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_source.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_source_epg.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_source_music.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_source_push_domain.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_source_score.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_source_tag.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_source_watermark.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_special_subject.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_theme.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_theme_classification.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_theme_classification_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/live_weather.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/operating_position.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/pull_new_activity.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/pull_new_activity_notify_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/pull_new_activity_notify_record.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/pull_new_activity_winner_list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/pull_new_helper.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/share_goods.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/share_goods_detail.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/share_live_room.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/share_live_room_detail.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/share_video.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/story_base_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/story_content_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/story_image_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/story_tag.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/story_video_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/system_error_msg.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/tag_manager.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/task_encyclopedia_robot_like.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/task_footprint_robot_like.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/task_live_robot_like.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/task_program_notice.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/task_video_robot_like.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/topic.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/topic_footprint_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/topic_history.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/topic_live_room_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/topic_on_list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/topic_recommend_position.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/topic_video_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_auth.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_cold_tags.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_collect.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_comment.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_coupon_record.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_device_info.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_feedback.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_live_source.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_live_source_rebroadcast.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_live_source_stream.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_logoff.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_message.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_outside_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/user_relationship.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/video.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/video_banner.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/video_statistics_detail.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/video_tag.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liveearth_primary/video_watch_statistics.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/sale_punch/sale_boost_punch.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/sale_punch/sale_lottery_probability.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/sale_punch/sale_merchant.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/sale_punch/sale_prize.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/sale_punch/sale_user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/sale_punch/sale_user_prize.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/sale_punch/sale_user_punch.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/sale_punch/sale_verification_log.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/user_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/wmts/topic_model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/errno/code.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/errno/code.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/protos/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/comment/comment.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/comment/comment.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/content/content.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/content/content.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/content/yz_token_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/data_platform/data_platform.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/data_platform/data_platform.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/distributed_lock/distributed_lock.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/footprint/footprint.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/footprint/footprint.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/geofence/geofence.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/geofence/geofence.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/guide/guide.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/guide/guide.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/im/im.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/im/im.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/message_push/message_push.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/message_push/message_push.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/recommend/recommend.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/recommend/recommend.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/search/search.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/search/search.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/stream_sync/stream_sync.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/stream_sync/stream_sync.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/user/user.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/user/user.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/wetoken/wetoken.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/wetoken/wetoken.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/rpc/rpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/servers/rpc/rpc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/oss.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/oss_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/stream.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/stream_test.go" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="GOROOT" path="/usr/local/Cellar/go/1.15.2/libexec" />
+  <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -24,55 +289,93 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
+    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RunManager" selected="Makefile 目标.push_stream">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="go_infrastructure" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="go_infrastructure" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="all" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/protos/Makefile" target="all" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="myrpc" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/protos/Makefile" target="myrpc" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="push_stream" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/protos/Makefile" target="push_stream" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Makefile 目标.push_stream" />
+        <item itemvalue="Makefile 目标.myrpc" />
+        <item itemvalue="Makefile 目标.all" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
         <option value="$PROJECT_DIR$/pkg/iris/typescript/_examples/editor/www/scripts/app.js" />
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="修改文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改文件" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="470" y="221" key="#Go_Modules" timestamp="1636901917834">
-      <screen x="0" y="25" width="1440" height="793" />
-    </state>
-    <state x="470" y="221" key="#Go_Modules/0.25.1440.793@0.25.1440.793" timestamp="1636901917834" />
-    <state x="279" y="0" key="CommitChangelistDialog2" timestamp="1637428018916">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="279" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1637428018916" />
-    <state x="279" y="25" key="CommitChangelistDialog2/0.25.1440.793@0.25.1440.793" timestamp="1636902244356" />
-    <state x="461" y="0" key="RollbackChangesDialog" timestamp="1637428016697">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="461" y="0" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1637428016697" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/component/component.go</url>
-          <line>57</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

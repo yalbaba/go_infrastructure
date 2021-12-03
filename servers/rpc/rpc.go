@@ -2,7 +2,6 @@ package rpc
 
 import (
 	"context"
-	"liveearth/infrastructure/protos/data_platform"
 	"liveearth/infrastructure/protos/push_stream"
 	"net"
 	"reflect"
@@ -11,18 +10,6 @@ import (
 	"liveearth/infrastructure/component"
 	"liveearth/infrastructure/config"
 	"liveearth/infrastructure/consts"
-	"liveearth/infrastructure/protos/comment"
-	"liveearth/infrastructure/protos/content"
-	"liveearth/infrastructure/protos/footprint"
-	"liveearth/infrastructure/protos/geofence"
-	"liveearth/infrastructure/protos/guide"
-	"liveearth/infrastructure/protos/im"
-	"liveearth/infrastructure/protos/message_push"
-	"liveearth/infrastructure/protos/recommend"
-	"liveearth/infrastructure/protos/search"
-	"liveearth/infrastructure/protos/stream_sync"
-	"liveearth/infrastructure/protos/user"
-	"liveearth/infrastructure/protos/wetoken"
 	"liveearth/infrastructure/servers"
 
 	inet "github.com/sereiner/library/net"
@@ -130,32 +117,6 @@ func (r *RpcServer) RegisterService(sc ...interface{}) {
 		}
 
 		switch t := rs[0].Interface().(type) {
-		case content.ContentServiceServer:
-			content.RegisterContentServiceServer(r.server, t)
-		case im.IMServiceServer:
-			im.RegisterIMServiceServer(r.server, t)
-		case user.UserServiceServer:
-			user.RegisterUserServiceServer(r.server, t)
-		case search.SearchServiceServer:
-			search.RegisterSearchServiceServer(r.server, t)
-		case message_push.MessagePushServiceServer:
-			message_push.RegisterMessagePushServiceServer(r.server, t)
-		case footprint.FootprintServiceServer:
-			footprint.RegisterFootprintServiceServer(r.server, t)
-		case comment.CommentServiceServer:
-			comment.RegisterCommentServiceServer(r.server, t)
-		case stream_sync.StreamSyncServiceServer:
-			stream_sync.RegisterStreamSyncServiceServer(r.server, t)
-		case wetoken.WeTokenServiceServer:
-			wetoken.RegisterWeTokenServiceServer(r.server, t)
-		case recommend.RecommendServiceServer:
-			recommend.RegisterRecommendServiceServer(r.server, t)
-		case geofence.GeofenceServiceServer:
-			geofence.RegisterGeofenceServiceServer(r.server, t)
-		case guide.GuideServiceServer:
-			guide.RegisterGuideServiceServer(r.server, t)
-		case data_platform.DataPlatformServiceServer:
-			data_platform.RegisterDataPlatformServiceServer(r.server, t)
 		case push_stream.PushStreamServiceServer:
 			push_stream.RegisterPushStreamServiceServer(r.server, t)
 		default:
