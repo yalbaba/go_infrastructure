@@ -7,11 +7,8 @@ require (
 	github.com/CloudyKit/jet/v3 v3.0.0
 	github.com/Shopify/goreferrer v0.0.0-20181106222321-ec9c9a553398
 	github.com/ajg/form v1.5.1 // indirect
-	github.com/aliyun/alibaba-cloud-sdk-go v1.61.337
-	github.com/aliyun/aliyun-oss-go-sdk v2.1.3+incompatible
 	github.com/asaskevich/govalidator v0.0.0-20190424111038-f61b66f89f4a
 	github.com/aymerick/raymond v2.0.3-0.20180322193309-b565731e1464+incompatible
-	github.com/baiyubin/aliyun-sts-go-sdk v0.0.0-20180326062324-cfa1a18b161f // indirect
 	github.com/beanstalkd/go-beanstalk v0.1.0
 	github.com/coreos/etcd v3.3.15+incompatible
 	github.com/cyanBone/dingtalk_robot v0.1.0
@@ -57,14 +54,13 @@ require (
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/ryanuber/columnize v2.1.0+incompatible
-	github.com/satori/go.uuid v1.2.0
 	github.com/schollz/closestmatch v2.1.0+incompatible
 	github.com/sereiner/library v0.0.0-20200518095232-1fa3e640cc5f
 	github.com/sergi/go-diff v1.1.0 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
+	github.com/smartystreets/goconvey v0.0.0-20190330032615-68dc04aab96a // indirect
 	github.com/stretchr/testify v1.7.0
 	github.com/takama/daemon v0.12.0
-	github.com/twpayne/go-geom v1.3.6
 	github.com/valyala/fasthttp v1.14.0
 	github.com/vmihailenco/msgpack/v5 v5.3.4
 	github.com/wule61/log v0.0.0-20190426025328-54b7fa0d64ad
@@ -84,7 +80,7 @@ require (
 	golang.org/x/text v0.3.5
 	golang.org/x/time v0.0.0-20210220033141-f8bda1e9f3ba
 	google.golang.org/grpc v1.27.0
-	google.golang.org/protobuf v1.25.0
+	google.golang.org/protobuf v1.25.0 // indirect
 	gopkg.in/ini.v1 v1.57.0
 	gopkg.in/ugjka/go-tz.v2 v2.0.12
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
