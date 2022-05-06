@@ -59,3 +59,9 @@ func WithRegistry() Option {
 		o.HasRegistry = true
 	}
 }
+
+func WithWs() Option {
+	return func(o *option) {
+		o.ServerTypes[consts.WsServer] = true
+	}
+}

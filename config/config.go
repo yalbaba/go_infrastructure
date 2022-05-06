@@ -13,6 +13,8 @@ type Config struct {
 
 	API APIServer `toml:"api"`
 
+	WS WsServer `toml:"ws"`
+
 	RPC GrpcService `toml:"grpc_service"`
 
 	Service map[string]Service `toml:"service"`
@@ -133,5 +135,9 @@ type GrpcService struct {
 }
 
 type APIServer struct {
+	Addr string `toml:"addr"`
+}
+
+type WsServer struct {
 	Addr string `toml:"addr"`
 }

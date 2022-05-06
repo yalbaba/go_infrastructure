@@ -2,11 +2,12 @@ package logfilter
 
 import (
 	"fmt"
-	"strings"
 	"sync"
 	"time"
 
 	logger "github.com/sereiner/library/log"
+	"github.com/sereiner/parrot/conf"
+	"github.com/sereiner/parrot/rpc"
 )
 
 type loggerSetting struct {
@@ -25,10 +26,10 @@ type RPCLogger struct {
 	appenders   []*RPCAppender
 	service     string
 	appender    *logger.Appender
-	//currentConf *conf.JSONConf
-	closeChan chan struct{}
-	once      sync.Once
-	lock      sync.RWMutex
+	currentConf *conf.JSONConf
+	closeChan   chan struct{}
+	once        sync.Once
+	lock        sync.RWMutex
 }
 
 //NewRPCLogger 创建RPC日志程序
@@ -98,7 +99,7 @@ func (r *RPCLogger) changed() error {
 	defer r.lock.Unlock()
 
 	if r.service != setting.Service {
-		_, domain, server, err := resolvePath(setting.Service, "", "")
+		_, domain, server, err := rpc.ResolvePath(setting.Service, "", "")
 		if err != nil || domain == "" || server == "" {
 			return fmt.Errorf("%s不合法 %v", setting.Service, err)
 		}
@@ -129,46 +130,4 @@ func (r *RPCLogger) changed() error {
 func (r *RPCLogger) Close() error {
 	close(r.closeChan)
 	return nil
-}
-
-//解析日志
-func resolvePath(address string, d string, s string) (service string, domain string, server string, err error) {
-	raddress := strings.TrimRight(address, "@")
-	addrs := strings.SplitN(raddress, "@", 2)
-	if len(addrs) == 1 {
-		if addrs[0] == "" {
-			return "", "", "", fmt.Errorf("服务地址%s不能为空", address)
-		}
-		service = "/" + strings.Trim(strings.Replace(raddress, ".", "/", -1), "/")
-		domain = d
-		server = s
-		return
-	}
-	if addrs[0] == "" {
-		return "", "", "", fmt.Errorf("%s错误，服务名不能为空", address)
-	}
-	if addrs[1] == "" {
-		return "", "", "", fmt.Errorf("%s错误，服务名，域不能为空", address)
-	}
-	service = "/" + strings.Trim(strings.Replace(addrs[0], ".", "/", -1), "/")
-	raddr := strings.Split(strings.TrimRight(addrs[1], "."), ".")
-	if len(raddr) >= 2 && raddr[0] != "" && raddr[1] != "" {
-		domain = raddr[len(raddr)-1]
-		server = strings.Join(raddr[0:len(raddr)-1], ".")
-		return
-	}
-	if len(raddr) == 1 {
-		if raddr[0] == "" {
-			return "", "", "", fmt.Errorf("%s错误，服务器名称不能为空", address)
-		}
-		domain = d
-		server = raddr[0]
-		return
-	}
-	if raddr[0] == "" && raddr[1] == "" {
-		return "", "", "", fmt.Errorf(`%s错误,未指定服务器名称和域名称`, addrs[1])
-	}
-	domain = raddr[1]
-	server = s
-	return
 }

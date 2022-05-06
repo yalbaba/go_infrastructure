@@ -40,6 +40,7 @@ import (
 	_ "liveearth/infrastructure/servers/mqc"
 	_ "liveearth/infrastructure/servers/nsq_consume"
 	_ "liveearth/infrastructure/servers/rpc"
+	_ "liveearth/infrastructure/servers/ws"
 
 	"liveearth/infrastructure/pkg/iris"
 
@@ -56,6 +57,7 @@ type IApp interface {
 	RegisterCronJob(name string, cron string, disable bool, handler cron.Handler)
 	RegisterNsqHandler(topic, channel string, handler nsq_consume.RegistryNsqConsumerHandlerFunc, opts ...nsq_consume.ConsumerOption)
 	RegisterMidJob(f func(component.Container))
+	RegisterWs(path string, handler http.Handler)
 	GetContainer() component.Container
 
 	Run() (string, error)
@@ -238,6 +240,16 @@ LOOP:
 	s.Close()
 	s.Debug(fmt.Sprintf("%s 服务器已安全退出...", s.AppName))
 	time.Sleep(time.Second)
+}
+
+func (s *UranusApp) RegisterWs(path string, handler http.Handler) {
+	if handler == nil || len(path) == 0 {
+		return
+	}
+
+	s.servers[consts.WsServer].RegisterService(map[string]http.Handler{
+		path: handler,
+	})
 }
 
 func (s *UranusApp) freeMemory() {

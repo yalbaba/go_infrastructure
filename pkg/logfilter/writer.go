@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"liveearth/infrastructure/config"
-	"strings"
 	"time"
 
 	"github.com/cyanBone/dingtalk_robot"
@@ -41,7 +40,7 @@ func newRPCWriter(service string, platName string, systemName string, clusterNam
 		clusterName: clusterName,
 		serverTypes: serverTypes,
 		report:      client,
-		cache:       cache.New(10*time.Minute, 15*time.Minute),
+		cache:       cache.New(5*time.Minute, 10*time.Minute),
 	}
 }
 
@@ -85,10 +84,6 @@ func (r *rpcWriter) reportDingDing(l *Layout) {
 
 	_, found := r.cache.Get(r.systemName)
 	if found {
-		return
-	}
-
-	if !strings.Contains(l.Content, "panic") {
 		return
 	}
 

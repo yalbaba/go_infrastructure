@@ -1034,6 +1034,8 @@ type Context interface {
 
 	Warnf(format string, v ...interface{})
 	Warn(v ...interface{})
+
+	GetSessionID() string
 }
 
 var _ Context = (*context)(nil)

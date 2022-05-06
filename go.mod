@@ -24,6 +24,7 @@ require (
 	github.com/golang/protobuf v1.4.1
 	github.com/gomodule/redigo v1.7.1-0.20190724094224-574c33c3df38
 	github.com/google/go-querystring v1.0.0 // indirect
+	github.com/gorilla/websocket v1.4.1
 	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
 	github.com/hashicorp/go-version v1.2.0
 	github.com/imkira/go-interpol v1.1.0 // indirect
@@ -56,6 +57,7 @@ require (
 	github.com/ryanuber/columnize v2.1.0+incompatible
 	github.com/schollz/closestmatch v2.1.0+incompatible
 	github.com/sereiner/library v0.0.0-20200518095232-1fa3e640cc5f
+	github.com/sereiner/parrot v0.0.0-20210809034802-e43fadcc6023
 	github.com/sergi/go-diff v1.1.0 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/smartystreets/goconvey v0.0.0-20190330032615-68dc04aab96a // indirect
@@ -83,6 +85,7 @@ require (
 	google.golang.org/protobuf v1.25.0 // indirect
 	gopkg.in/ini.v1 v1.57.0
 	gopkg.in/ugjka/go-tz.v2 v2.0.12
+	gopkg.in/yaml.v2 v2.2.8
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 	gorm.io/driver/mysql v1.0.5
 	gorm.io/gorm v1.21.3
