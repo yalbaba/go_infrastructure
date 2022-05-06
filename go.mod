@@ -1,4 +1,4 @@
-module liveearth/infrastructure
+module go_infrastructure
 
 go 1.15
 
