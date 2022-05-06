@@ -1,9 +1,9 @@
 package main
 
 import (
-	"liveearth/infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris"
 
-	"liveearth/infrastructure/pkg/iris/typescript/editor"
+	"go_infrastructure/pkg/iris/typescript/editor"
 )
 
 func main() {

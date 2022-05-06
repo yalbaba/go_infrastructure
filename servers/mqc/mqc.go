@@ -1,10 +1,10 @@
 package mqc
 
 import (
-	"liveearth/infrastructure/component"
-	"liveearth/infrastructure/config"
-	"liveearth/infrastructure/consts"
-	"liveearth/infrastructure/servers"
+	"go_infrastructure/component"
+	"go_infrastructure/config"
+	"go_infrastructure/consts"
+	"go_infrastructure/servers"
 	"sync"
 	"time"
 

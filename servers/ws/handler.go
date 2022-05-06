@@ -2,8 +2,8 @@ package ws
 
 import (
 	"fmt"
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/servers/http"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/servers/http"
 	"sync"
 	"time"
 

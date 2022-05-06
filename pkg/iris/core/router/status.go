@@ -4,7 +4,7 @@ import (
 	"net/http" // just for status codes
 	"sync"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 func statusCodeSuccessful(statusCode int) bool {

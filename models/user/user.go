@@ -3,7 +3,7 @@ package user
 import (
 	"github.com/zlyuancn/zstr"
 
-	"liveearth/infrastructure/models"
+	"go_infrastructure/models"
 
 	"github.com/iris-contrib/middleware/jwt"
 	jsoniter "github.com/json-iterator/go"

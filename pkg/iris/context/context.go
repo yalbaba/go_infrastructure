@@ -23,7 +23,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/core/memstore"
+	"go_infrastructure/pkg/iris/core/memstore"
 
 	"github.com/Shopify/goreferrer"
 	"github.com/fatih/structs"

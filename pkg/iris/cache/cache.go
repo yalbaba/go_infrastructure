@@ -9,8 +9,8 @@ Example code:
 		 import (
 		 	"time"
 
-		 	"liveearth/infrastructure/pkg/iris"
-		 	"liveearth/infrastructure/pkg/iris/cache"
+		 	"go_infrastructure/pkg/iris"
+		 	"go_infrastructure/pkg/iris/cache"
 		 )
 
 		 func main(){
@@ -30,8 +30,8 @@ package cache
 import (
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/cache/client"
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/cache/client"
+	"go_infrastructure/pkg/iris/context"
 )
 
 // Cache accepts the cache expiration duration.

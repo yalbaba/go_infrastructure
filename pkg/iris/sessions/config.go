@@ -3,7 +3,7 @@ package sessions
 import (
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 
 	uuid "github.com/iris-contrib/go.uuid"
 )

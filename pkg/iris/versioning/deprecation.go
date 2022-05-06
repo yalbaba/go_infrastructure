@@ -3,7 +3,7 @@ package versioning
 import (
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 // DeprecationOptions describes the deprecation headers key-values.

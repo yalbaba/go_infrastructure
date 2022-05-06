@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"testing"
 
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris/context"
 
-	"liveearth/infrastructure/pkg/iris/httptest"
+	"go_infrastructure/pkg/iris/httptest"
 )
 
 var defaultErrHandler = func(ctx context.Context) {

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	"liveearth/infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris"
 
 	"github.com/gavv/httpexpect"
 )

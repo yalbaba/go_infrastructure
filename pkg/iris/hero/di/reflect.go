@@ -3,7 +3,7 @@ package di
 import (
 	"reflect"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 // EmptyIn is just an empty slice of reflect.Value.

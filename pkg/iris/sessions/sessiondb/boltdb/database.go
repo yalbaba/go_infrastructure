@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/sessions"
+	"go_infrastructure/pkg/iris/sessions"
 
 	bolt "github.com/etcd-io/bbolt"
 	"github.com/kataras/golog"

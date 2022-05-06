@@ -5,7 +5,7 @@ package router
 import (
 	"testing"
 
-	"liveearth/infrastructure/pkg/iris/macro"
+	"go_infrastructure/pkg/iris/macro"
 )
 
 func TestRouteStaticPath(t *testing.T) {

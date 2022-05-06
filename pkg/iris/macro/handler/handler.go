@@ -3,8 +3,8 @@
 package handler
 
 import (
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/macro"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/macro"
 )
 
 // CanMakeHandler reports whether a macro template needs a special macro's evaluator handler to be validated

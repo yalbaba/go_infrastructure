@@ -1,7 +1,7 @@
 package router
 
 import (
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 // ExecutionRules gives control to the execution of the route handlers outside of the handlers themselves.

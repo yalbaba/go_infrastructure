@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"liveearth/infrastructure/pkg/iris/core/memstore"
+	"go_infrastructure/pkg/iris/core/memstore"
 )
 
 // RequestParams is a key string - value string storage which

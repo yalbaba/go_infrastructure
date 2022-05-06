@@ -2,14 +2,14 @@ package ws
 
 import (
 	sctx "context"
-	"liveearth/infrastructure/component"
-	"liveearth/infrastructure/config"
-	"liveearth/infrastructure/consts"
-	"liveearth/infrastructure/pkg/exchange"
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/servers"
-	"liveearth/infrastructure/servers/http"
-	"liveearth/infrastructure/servers/http/middleware"
+	"go_infrastructure/component"
+	"go_infrastructure/config"
+	"go_infrastructure/consts"
+	"go_infrastructure/pkg/exchange"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/servers"
+	"go_infrastructure/servers/http"
+	"go_infrastructure/servers/http/middleware"
 	http2 "net/http"
 	"time"
 

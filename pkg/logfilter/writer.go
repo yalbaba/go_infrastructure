@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"liveearth/infrastructure/config"
+	"go_infrastructure/config"
 	"time"
 
 	"github.com/cyanBone/dingtalk_robot"

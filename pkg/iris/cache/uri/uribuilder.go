@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/cache/cfg"
+	"go_infrastructure/pkg/iris/cache/cfg"
 )
 
 // URIBuilder is the requested url builder

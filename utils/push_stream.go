@@ -2,9 +2,10 @@ package utils
 
 import (
 	"fmt"
+	"go_infrastructure/consts"
+
 	"github.com/vmihailenco/msgpack/v5"
 	"github.com/zlyuancn/zdingtalk"
-	"liveearth/infrastructure/consts"
 )
 
 var dingTalkConfig = map[string]struct {

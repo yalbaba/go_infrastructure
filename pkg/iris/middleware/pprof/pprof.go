@@ -7,8 +7,8 @@ import (
 	rpprof "runtime/pprof"
 	"strings"
 
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/core/handlerconv"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/core/handlerconv"
 )
 
 // New returns a new pprof (profile, cmdline, symbol, goroutine, heap, threadcreate, debug/block) Middleware.

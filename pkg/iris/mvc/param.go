@@ -3,8 +3,8 @@ package mvc
 import (
 	"reflect"
 
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/macro"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/macro"
 )
 
 func getPathParamsForInput(startParamIndex int, params []macro.TemplateParam, funcIn ...reflect.Type) (values []reflect.Value) {

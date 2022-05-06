@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris/context"
 )
 
 type (

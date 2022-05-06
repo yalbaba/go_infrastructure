@@ -4,9 +4,9 @@ import (
 	"reflect"
 	"testing"
 
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/pkg/iris/core/router"
-	"liveearth/infrastructure/pkg/iris/httptest"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris/core/router"
+	"go_infrastructure/pkg/iris/httptest"
 )
 
 func TestRegisterRule(t *testing.T) {

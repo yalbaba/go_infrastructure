@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"sort"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 // Scope is the struct injector's struct value scope/permant state.

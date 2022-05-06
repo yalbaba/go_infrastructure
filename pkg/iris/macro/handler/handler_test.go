@@ -3,7 +3,7 @@ package handler
 import (
 	"testing"
 
-	"liveearth/infrastructure/pkg/iris/macro"
+	"go_infrastructure/pkg/iris/macro"
 )
 
 func TestCanMakeHandler(t *testing.T) {

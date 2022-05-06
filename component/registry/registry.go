@@ -3,15 +3,16 @@ package registry
 import (
 	"context"
 	"fmt"
+	"go_infrastructure/component/rpccli/balancer/smooth_roundrobin"
+	"go_infrastructure/config"
+	"go_infrastructure/consts"
+	"go_infrastructure/utils"
+
 	jsoniter "github.com/json-iterator/go"
 	"github.com/ozonru/etcd/clientv3"
 	logger "github.com/sereiner/library/log"
 	inet "github.com/sereiner/library/net"
 	"google.golang.org/grpc/grpclog"
-	"liveearth/infrastructure/component/rpccli/balancer/smooth_roundrobin"
-	"liveearth/infrastructure/config"
-	"liveearth/infrastructure/consts"
-	"liveearth/infrastructure/utils"
 )
 
 type IRegistry interface {

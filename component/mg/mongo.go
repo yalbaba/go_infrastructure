@@ -3,11 +3,12 @@ package mg
 import (
 	"context"
 	"fmt"
+	"go_infrastructure/config"
+	"time"
+
 	"github.com/sereiner/library/concurrent/cmap"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"liveearth/infrastructure/config"
-	"time"
 )
 
 type IComponentMongo interface {

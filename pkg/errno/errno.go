@@ -2,7 +2,7 @@ package errno
 
 import (
 	"fmt"
-	"liveearth/infrastructure/config"
+	"go_infrastructure/config"
 )
 
 type Errno struct {

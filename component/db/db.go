@@ -2,7 +2,7 @@ package db
 
 import (
 	"fmt"
-	"liveearth/infrastructure/config"
+	"go_infrastructure/config"
 
 	"github.com/sereiner/library/concurrent/cmap"
 	"github.com/sereiner/library/db"

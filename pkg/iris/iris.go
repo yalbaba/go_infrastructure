@@ -17,24 +17,24 @@ import (
 	"time"
 
 	// context for the handlers
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 	// core packages, required to build the application
-	"liveearth/infrastructure/pkg/iris/core/errgroup"
-	"liveearth/infrastructure/pkg/iris/core/host"
-	"liveearth/infrastructure/pkg/iris/core/netutil"
-	"liveearth/infrastructure/pkg/iris/core/router"
+	"go_infrastructure/pkg/iris/core/errgroup"
+	"go_infrastructure/pkg/iris/core/host"
+	"go_infrastructure/pkg/iris/core/netutil"
+	"go_infrastructure/pkg/iris/core/router"
 
 	// handlerconv conversions
-	"liveearth/infrastructure/pkg/iris/core/handlerconv"
+	"go_infrastructure/pkg/iris/core/handlerconv"
 	// cache conversions
-	"liveearth/infrastructure/pkg/iris/cache"
+	"go_infrastructure/pkg/iris/cache"
 	// view
-	"liveearth/infrastructure/pkg/iris/view"
+	"go_infrastructure/pkg/iris/view"
 	// i18n
-	"liveearth/infrastructure/pkg/iris/i18n"
+	"go_infrastructure/pkg/iris/i18n"
 	// handlers used in `Default` function
-	requestLogger "liveearth/infrastructure/pkg/iris/middleware/logger"
-	"liveearth/infrastructure/pkg/iris/middleware/recover"
+	requestLogger "go_infrastructure/pkg/iris/middleware/logger"
+	"go_infrastructure/pkg/iris/middleware/recover"
 
 	"github.com/kataras/golog"
 	"gopkg.in/yaml.v3"
@@ -454,7 +454,7 @@ var (
 	// Cache304 sends a `StatusNotModified` (304) whenever
 	// the "If-Modified-Since" request header (time) is before the
 	// time.Now() + expiresEvery (always compared to their UTC values).
-	// Use this, which is a shortcut of the, `chache#Cache304` instead of the "liveearth/infrastructure/pkg/iris/cache" or iris.Cache
+	// Use this, which is a shortcut of the, `chache#Cache304` instead of the "go_infrastructure/pkg/iris/cache" or iris.Cache
 	// for better performance.
 	// Clients that are compatible with the http RCF (all browsers are and tools like postman)
 	// will handle the caching.
@@ -687,7 +687,7 @@ func (app *Application) Shutdown(ctx stdContext.Context) error {
 // If error occurred while building the Application, the returns type of error will be an *errgroup.Group
 // which let the callers to inspect the errors and cause, usage:
 //
-// import "liveearth/infrastructure/pkg/iris/core/errgroup"
+// import "go_infrastructure/pkg/iris/core/errgroup"
 //
 // errgroup.Walk(app.Build(), func(typ interface{}, err error) {
 // 	app.Logger().Errorf("%s: %s", typ, err)

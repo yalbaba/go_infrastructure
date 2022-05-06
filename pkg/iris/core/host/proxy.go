@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/core/netutil"
+	"go_infrastructure/pkg/iris/core/netutil"
 )
 
 func singleJoiningSlash(a, b string) string {

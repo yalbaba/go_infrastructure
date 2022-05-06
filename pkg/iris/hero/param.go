@@ -3,8 +3,8 @@ package hero
 import (
 	"reflect"
 
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/hero/di"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/hero/di"
 )
 
 // weak because we don't have access to the path, neither

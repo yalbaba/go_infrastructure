@@ -3,7 +3,7 @@ package entry
 import (
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/cache/cfg"
+	"go_infrastructure/pkg/iris/cache/cfg"
 )
 
 // Entry is the cache entry

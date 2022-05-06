@@ -1,8 +1,8 @@
 package hero
 
 import (
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/hero/di"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/hero/di"
 
 	"github.com/kataras/golog"
 )

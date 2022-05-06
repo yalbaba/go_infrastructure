@@ -3,14 +3,14 @@ package app
 import (
 	"flag"
 	"fmt"
-	"liveearth/infrastructure/component/registry"
+	"go_infrastructure/component/registry"
 
-	"liveearth/infrastructure/consts"
-	"liveearth/infrastructure/pkg/logfilter"
-	"liveearth/infrastructure/servers/cron"
-	"liveearth/infrastructure/servers/http"
-	"liveearth/infrastructure/servers/mqc"
-	"liveearth/infrastructure/servers/nsq_consume"
+	"go_infrastructure/consts"
+	"go_infrastructure/pkg/logfilter"
+	"go_infrastructure/servers/cron"
+	"go_infrastructure/servers/http"
+	"go_infrastructure/servers/mqc"
+	"go_infrastructure/servers/nsq_consume"
 
 	logger "github.com/sereiner/library/log"
 
@@ -18,7 +18,7 @@ import (
 
 	"sync"
 
-	"liveearth/infrastructure/servers"
+	"go_infrastructure/servers"
 
 	"os"
 	"os/signal"
@@ -33,16 +33,16 @@ import (
 
 	"time"
 
-	"liveearth/infrastructure/component"
-	"liveearth/infrastructure/config"
-	_ "liveearth/infrastructure/servers/cron"
-	_ "liveearth/infrastructure/servers/http"
-	_ "liveearth/infrastructure/servers/mqc"
-	_ "liveearth/infrastructure/servers/nsq_consume"
-	_ "liveearth/infrastructure/servers/rpc"
-	_ "liveearth/infrastructure/servers/ws"
+	"go_infrastructure/component"
+	"go_infrastructure/config"
+	_ "go_infrastructure/servers/cron"
+	_ "go_infrastructure/servers/http"
+	_ "go_infrastructure/servers/mqc"
+	_ "go_infrastructure/servers/nsq_consume"
+	_ "go_infrastructure/servers/rpc"
+	_ "go_infrastructure/servers/ws"
 
-	"liveearth/infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris"
 
 	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"

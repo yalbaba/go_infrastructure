@@ -2,8 +2,8 @@ package servers
 
 import (
 	"fmt"
-	"liveearth/infrastructure/component"
-	"liveearth/infrastructure/consts"
+	"go_infrastructure/component"
+	"go_infrastructure/consts"
 )
 
 type IServer interface {

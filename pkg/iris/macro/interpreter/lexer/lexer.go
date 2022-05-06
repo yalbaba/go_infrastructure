@@ -1,7 +1,7 @@
 package lexer
 
 import (
-	"liveearth/infrastructure/pkg/iris/macro/interpreter/token"
+	"go_infrastructure/pkg/iris/macro/interpreter/token"
 )
 
 // Lexer helps us to read/scan characters of a source and resolve their token types.

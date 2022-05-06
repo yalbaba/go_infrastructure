@@ -3,10 +3,11 @@ package es
 import (
 	"context"
 	"fmt"
+	"go_infrastructure/config"
+	"time"
+
 	"github.com/olivere/elastic/v7"
 	"github.com/sereiner/library/concurrent/cmap"
-	"liveearth/infrastructure/config"
-	"time"
 )
 
 type IComponentES interface {

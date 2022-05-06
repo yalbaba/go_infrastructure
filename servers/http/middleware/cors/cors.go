@@ -1,7 +1,7 @@
 package cors
 
 import (
-	"liveearth/infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris"
 	"log"
 	"net/http"
 	"os"

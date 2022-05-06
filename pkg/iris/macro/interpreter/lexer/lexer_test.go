@@ -3,7 +3,7 @@ package lexer
 import (
 	"testing"
 
-	"liveearth/infrastructure/pkg/iris/macro/interpreter/token"
+	"go_infrastructure/pkg/iris/macro/interpreter/token"
 )
 
 func TestNextToken(t *testing.T) {

@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"strings"
 
-	"liveearth/infrastructure/pkg/iris/macro/interpreter/ast"
-	"liveearth/infrastructure/pkg/iris/macro/interpreter/lexer"
-	"liveearth/infrastructure/pkg/iris/macro/interpreter/token"
+	"go_infrastructure/pkg/iris/macro/interpreter/ast"
+	"go_infrastructure/pkg/iris/macro/interpreter/lexer"
+	"go_infrastructure/pkg/iris/macro/interpreter/token"
 )
 
 // Parse takes a route "fullpath"

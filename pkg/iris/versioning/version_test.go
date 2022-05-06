@@ -3,9 +3,9 @@ package versioning_test
 import (
 	"testing"
 
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/pkg/iris/httptest"
-	"liveearth/infrastructure/pkg/iris/versioning"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris/httptest"
+	"go_infrastructure/pkg/iris/versioning"
 )
 
 func TestGetVersion(t *testing.T) {

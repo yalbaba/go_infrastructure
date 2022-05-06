@@ -11,10 +11,10 @@ import (
 	"google.golang.org/grpc/balancer/roundrobin"
 	"google.golang.org/grpc/resolver"
 
-	"liveearth/infrastructure/component/rpccli/balancer"
-	"liveearth/infrastructure/config"
-	"liveearth/infrastructure/consts"
-	"liveearth/infrastructure/protos/push_stream"
+	"go_infrastructure/component/rpccli/balancer"
+	"go_infrastructure/config"
+	"go_infrastructure/consts"
+	"go_infrastructure/protos/push_stream"
 )
 
 type IComponentRpcClient interface {

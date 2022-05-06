@@ -2,7 +2,7 @@ package mq
 
 import (
 	"fmt"
-	"liveearth/infrastructure/config"
+	"go_infrastructure/config"
 	"time"
 
 	"github.com/beanstalkd/go-beanstalk"

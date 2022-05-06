@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/core/errgroup"
-	"liveearth/infrastructure/pkg/iris/macro"
-	macroHandler "liveearth/infrastructure/pkg/iris/macro/handler"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/core/errgroup"
+	"go_infrastructure/pkg/iris/macro"
+	macroHandler "go_infrastructure/pkg/iris/macro/handler"
 )
 
 // MethodNone is a Virtual method

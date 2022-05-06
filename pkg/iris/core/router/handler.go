@@ -5,10 +5,10 @@ import (
 	"sort"
 	"strings"
 
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/core/errgroup"
-	"liveearth/infrastructure/pkg/iris/core/netutil"
-	macroHandler "liveearth/infrastructure/pkg/iris/macro/handler"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/core/errgroup"
+	"go_infrastructure/pkg/iris/core/netutil"
+	macroHandler "go_infrastructure/pkg/iris/macro/handler"
 
 	"github.com/kataras/golog"
 )

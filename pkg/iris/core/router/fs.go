@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 const indexName = "/index.html"

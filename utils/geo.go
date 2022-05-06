@@ -21,7 +21,7 @@ import (
 
 	jsoniter "github.com/json-iterator/go"
 
-	"liveearth/infrastructure/consts"
+	"go_infrastructure/consts"
 )
 
 var Geo = new(geoUtil)

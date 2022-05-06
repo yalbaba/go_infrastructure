@@ -5,11 +5,11 @@ import (
 	"reflect"
 	"strings"
 
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/core/router"
-	"liveearth/infrastructure/pkg/iris/hero"
-	"liveearth/infrastructure/pkg/iris/hero/di"
-	"liveearth/infrastructure/pkg/iris/macro"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/core/router"
+	"go_infrastructure/pkg/iris/hero"
+	"go_infrastructure/pkg/iris/hero/di"
+	"go_infrastructure/pkg/iris/macro"
 
 	"github.com/kataras/golog"
 )

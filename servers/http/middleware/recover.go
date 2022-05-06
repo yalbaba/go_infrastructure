@@ -2,8 +2,8 @@ package middleware
 
 import (
 	"fmt"
-	"liveearth/infrastructure/component"
-	"liveearth/infrastructure/pkg/iris"
+	"go_infrastructure/component"
+	"go_infrastructure/pkg/iris"
 	"runtime"
 	"strconv"
 )

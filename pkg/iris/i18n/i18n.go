@@ -9,8 +9,8 @@ import (
 	"strings"
 	"sync"
 
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/core/router"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/core/router"
 
 	"golang.org/x/text/language"
 )

@@ -6,7 +6,7 @@ package orm
 
 import (
 	"fmt"
-	"liveearth/infrastructure/config"
+	"go_infrastructure/config"
 
 	"gorm.io/driver/mysql"
 

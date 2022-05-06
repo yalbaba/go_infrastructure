@@ -11,7 +11,7 @@ import (
 	"strings"
 	"sync"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 
 	"github.com/iris-contrib/pongo2"
 )

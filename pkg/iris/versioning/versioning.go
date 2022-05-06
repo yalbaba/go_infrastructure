@@ -1,7 +1,7 @@
 package versioning
 
 import (
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 
 	"github.com/hashicorp/go-version"
 )

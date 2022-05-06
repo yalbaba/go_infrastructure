@@ -1,7 +1,7 @@
 package rule
 
 import (
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 // Rule a superset of validators

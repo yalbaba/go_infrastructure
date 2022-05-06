@@ -3,9 +3,9 @@ package macro
 import (
 	"reflect"
 
-	"liveearth/infrastructure/pkg/iris/core/memstore"
-	"liveearth/infrastructure/pkg/iris/macro/interpreter/ast"
-	"liveearth/infrastructure/pkg/iris/macro/interpreter/parser"
+	"go_infrastructure/pkg/iris/core/memstore"
+	"go_infrastructure/pkg/iris/macro/interpreter/ast"
+	"go_infrastructure/pkg/iris/macro/interpreter/parser"
 )
 
 // Template contains a route's path full parsed template.

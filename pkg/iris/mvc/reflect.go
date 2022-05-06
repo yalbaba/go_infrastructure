@@ -3,7 +3,7 @@ package mvc
 import (
 	"reflect"
 
-	"liveearth/infrastructure/pkg/iris/hero/di"
+	"go_infrastructure/pkg/iris/hero/di"
 )
 
 var (

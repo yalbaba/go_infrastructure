@@ -2,8 +2,8 @@ package middleware
 
 import (
 	"fmt"
-	iuser "liveearth/infrastructure/models/user"
-	"liveearth/infrastructure/pkg/iris"
+	iuser "go_infrastructure/models/user"
+	"go_infrastructure/pkg/iris"
 	"time"
 
 	"github.com/iris-contrib/middleware/jwt"

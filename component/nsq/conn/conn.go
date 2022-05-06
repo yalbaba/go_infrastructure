@@ -12,7 +12,7 @@ import (
 	"fmt"
 	"sync"
 
-	"liveearth/infrastructure/utils"
+	"go_infrastructure/utils"
 )
 
 // 默认组件名

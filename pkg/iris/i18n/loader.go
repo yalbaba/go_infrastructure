@@ -9,7 +9,7 @@ import (
 	"strings"
 	"text/template"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 
 	"github.com/BurntSushi/toml"
 	"golang.org/x/text/language"

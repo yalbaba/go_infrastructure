@@ -1,9 +1,9 @@
 package router
 
 import (
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/core/errgroup"
-	"liveearth/infrastructure/pkg/iris/macro"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/core/errgroup"
+	"go_infrastructure/pkg/iris/macro"
 )
 
 // Party is just a group joiner of routes which have the same prefix and share same middleware(s) also.

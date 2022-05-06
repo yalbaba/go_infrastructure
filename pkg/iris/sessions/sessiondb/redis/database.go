@@ -4,7 +4,7 @@ import (
 	"errors"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/sessions"
+	"go_infrastructure/pkg/iris/sessions"
 
 	"github.com/kataras/golog"
 )

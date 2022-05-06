@@ -3,9 +3,9 @@ package methodoverride_test
 import (
 	"testing"
 
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/pkg/iris/httptest"
-	"liveearth/infrastructure/pkg/iris/middleware/methodoverride"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris/httptest"
+	"go_infrastructure/pkg/iris/middleware/methodoverride"
 )
 
 func TestMethodOverrideWrapper(t *testing.T) {

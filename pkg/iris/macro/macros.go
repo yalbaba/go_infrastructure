@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"liveearth/infrastructure/pkg/iris/macro/interpreter/ast"
+	"go_infrastructure/pkg/iris/macro/interpreter/ast"
 )
 
 var (

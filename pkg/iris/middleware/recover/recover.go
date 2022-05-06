@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"strconv"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 func getRequestLogs(ctx context.Context) string {

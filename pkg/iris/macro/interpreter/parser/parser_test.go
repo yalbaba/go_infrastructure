@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"liveearth/infrastructure/pkg/iris/macro/interpreter/ast"
+	"go_infrastructure/pkg/iris/macro/interpreter/ast"
 )
 
 type simpleParamType string

@@ -1,9 +1,9 @@
 package main
 
 import (
-	"liveearth/infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris"
 
-	"liveearth/infrastructure/pkg/iris/typescript"
+	"go_infrastructure/pkg/iris/typescript"
 )
 
 // NOTE: Some machines don't allow to install typescript automatically, so if you don't have typescript installed

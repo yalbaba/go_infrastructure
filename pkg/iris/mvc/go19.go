@@ -2,7 +2,7 @@
 
 package mvc
 
-import "liveearth/infrastructure/pkg/iris/hero"
+import "go_infrastructure/pkg/iris/hero"
 
 type (
 

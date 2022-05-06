@@ -2,15 +2,15 @@ package rpc
 
 import (
 	"context"
-	"liveearth/infrastructure/protos/push_stream"
+	"go_infrastructure/protos/push_stream"
 	"net"
 	"reflect"
 	"time"
 
-	"liveearth/infrastructure/component"
-	"liveearth/infrastructure/config"
-	"liveearth/infrastructure/consts"
-	"liveearth/infrastructure/servers"
+	"go_infrastructure/component"
+	"go_infrastructure/config"
+	"go_infrastructure/consts"
+	"go_infrastructure/servers"
 
 	inet "github.com/sereiner/library/net"
 

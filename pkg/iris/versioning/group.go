@@ -3,8 +3,8 @@ package versioning
 import (
 	"net/http"
 
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/core/router"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/core/router"
 )
 
 type (

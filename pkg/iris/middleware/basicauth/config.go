@@ -3,7 +3,7 @@ package basicauth
 import (
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 const (

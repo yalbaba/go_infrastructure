@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 // A Sessions manager should be responsible to Start a sesion, based

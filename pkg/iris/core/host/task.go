@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/core/netutil"
+	"go_infrastructure/pkg/iris/core/netutil"
 )
 
 // WriteStartupLogOnServe is a task which accepts a logger(io.Writer)

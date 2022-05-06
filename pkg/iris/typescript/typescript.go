@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"liveearth/infrastructure/pkg/iris/typescript/npm"
+	"go_infrastructure/pkg/iris/typescript/npm"
 )
 
 type (

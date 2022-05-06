@@ -1,8 +1,8 @@
 package http
 
 import (
-	"liveearth/infrastructure/pkg/errno"
-	"liveearth/infrastructure/pkg/iris"
+	"go_infrastructure/pkg/errno"
+	"go_infrastructure/pkg/iris"
 )
 
 type Handler func(ctx iris.Context) interface{}

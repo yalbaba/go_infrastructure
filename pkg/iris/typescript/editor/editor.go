@@ -5,7 +5,7 @@ package editor
 Usage:
 
 
-	import "liveearth/infrastructure/pkg/iris/typescript/editor"
+	import "go_infrastructure/pkg/iris/typescript/editor"
 	[...]
 
 	app := iris.New()
@@ -30,7 +30,7 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"liveearth/infrastructure/pkg/iris/typescript/npm"
+	"go_infrastructure/pkg/iris/typescript/npm"
 )
 
 type (

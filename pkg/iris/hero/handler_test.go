@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"testing"
 
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/pkg/iris/httptest"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris/httptest"
 
-	. "liveearth/infrastructure/pkg/iris/hero"
+	. "go_infrastructure/pkg/iris/hero"
 )
 
 // dynamic func

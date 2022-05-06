@@ -3,7 +3,7 @@ package hero
 import (
 	"testing"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 func TestPathParams(t *testing.T) {

@@ -46,9 +46,9 @@ func HandlerFileLine(h Handler) (file string, line int) {
 func MainHandlerName(handlers Handlers) (name string) {
 	for i := 0; i < len(handlers); i++ {
 		name = HandlerName(handlers[i])
-		if !strings.HasPrefix(name, "liveearth/infrastructure/pkg/iris") ||
-			strings.HasPrefix(name, "liveearth/infrastructure/pkg/iris/core/router.StripPrefix") ||
-			strings.HasPrefix(name, "liveearth/infrastructure/pkg/iris/core/router.FileServer") {
+		if !strings.HasPrefix(name, "go_infrastructure/pkg/iris") ||
+			strings.HasPrefix(name, "go_infrastructure/pkg/iris/core/router.StripPrefix") ||
+			strings.HasPrefix(name, "go_infrastructure/pkg/iris/core/router.FileServer") {
 			break
 		}
 	}

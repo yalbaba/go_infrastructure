@@ -1,6 +1,6 @@
 package app
 
-import "liveearth/infrastructure/consts"
+import "go_infrastructure/consts"
 
 type option struct {
 	PlatName    string

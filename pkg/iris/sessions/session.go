@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"sync"
 
-	"liveearth/infrastructure/pkg/iris/core/memstore"
+	"go_infrastructure/pkg/iris/core/memstore"
 )
 
 type (

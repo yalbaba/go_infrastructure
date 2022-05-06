@@ -4,9 +4,9 @@ import (
 	"sync"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/cache/client/rule"
-	"liveearth/infrastructure/pkg/iris/cache/entry"
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/cache/client/rule"
+	"go_infrastructure/pkg/iris/cache/entry"
+	"go_infrastructure/pkg/iris/context"
 )
 
 // Handler the local cache service handler contains

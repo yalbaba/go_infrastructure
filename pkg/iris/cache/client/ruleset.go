@@ -1,10 +1,10 @@
 package client
 
 import (
-	"liveearth/infrastructure/pkg/iris/cache/cfg"
-	"liveearth/infrastructure/pkg/iris/cache/client/rule"
-	"liveearth/infrastructure/pkg/iris/cache/ruleset"
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/cache/cfg"
+	"go_infrastructure/pkg/iris/cache/client/rule"
+	"go_infrastructure/pkg/iris/cache/ruleset"
+	"go_infrastructure/pkg/iris/context"
 )
 
 // DefaultRuleSet is a list of the default pre-cache validators

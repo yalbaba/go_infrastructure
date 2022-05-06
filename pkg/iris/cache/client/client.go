@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/cache/cfg"
-	"liveearth/infrastructure/pkg/iris/cache/client/rule"
-	"liveearth/infrastructure/pkg/iris/cache/uri"
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/cache/cfg"
+	"go_infrastructure/pkg/iris/cache/client/rule"
+	"go_infrastructure/pkg/iris/cache/uri"
+	"go_infrastructure/pkg/iris/context"
 )
 
 // ClientHandler is the client-side handler

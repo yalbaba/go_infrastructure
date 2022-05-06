@@ -1,7 +1,7 @@
 package rule
 
 import (
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 // chainedRule is a Rule with next Rule

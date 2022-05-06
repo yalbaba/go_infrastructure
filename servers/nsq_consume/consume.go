@@ -16,9 +16,9 @@ import (
 	"github.com/nsqio/go-nsq"
 	"go.uber.org/zap"
 
-	"liveearth/infrastructure/component"
-	"liveearth/infrastructure/config"
-	"liveearth/infrastructure/utils"
+	"go_infrastructure/component"
+	"go_infrastructure/config"
+	"go_infrastructure/utils"
 )
 
 type Context struct {

@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"liveearth/infrastructure/pkg/iris/typescript/npm"
+	"go_infrastructure/pkg/iris/typescript/npm"
 )
 
 var (

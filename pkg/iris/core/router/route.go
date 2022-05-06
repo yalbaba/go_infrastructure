@@ -5,9 +5,9 @@ import (
 	"strings"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/macro"
-	"liveearth/infrastructure/pkg/iris/macro/handler"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/macro"
+	"go_infrastructure/pkg/iris/macro/handler"
 )
 
 // Route contains the information about a registered Route.

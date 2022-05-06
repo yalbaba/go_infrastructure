@@ -2,13 +2,13 @@ package http
 
 import (
 	"context"
-	"liveearth/infrastructure/component"
-	"liveearth/infrastructure/config"
-	"liveearth/infrastructure/consts"
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/servers"
-	"liveearth/infrastructure/servers/http/middleware"
-	"liveearth/infrastructure/servers/http/middleware/cors"
+	"go_infrastructure/component"
+	"go_infrastructure/config"
+	"go_infrastructure/consts"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/servers"
+	"go_infrastructure/servers/http/middleware"
+	"go_infrastructure/servers/http/middleware/cors"
 	"time"
 
 	inet "github.com/sereiner/library/net"

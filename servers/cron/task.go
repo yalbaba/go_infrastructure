@@ -2,7 +2,7 @@ package cron
 
 import (
 	"fmt"
-	"liveearth/infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris"
 	"math"
 	"time"
 

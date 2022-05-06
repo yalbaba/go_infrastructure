@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"strings"
 
-	"liveearth/infrastructure/pkg/iris/core/netutil"
-	"liveearth/infrastructure/pkg/iris/macro"
-	"liveearth/infrastructure/pkg/iris/macro/interpreter/ast"
-	"liveearth/infrastructure/pkg/iris/macro/interpreter/lexer"
+	"go_infrastructure/pkg/iris/core/netutil"
+	"go_infrastructure/pkg/iris/macro"
+	"go_infrastructure/pkg/iris/macro/interpreter/ast"
+	"go_infrastructure/pkg/iris/macro/interpreter/lexer"
 )
 
 // Param receives a parameter name prefixed with the ParamStart symbol.

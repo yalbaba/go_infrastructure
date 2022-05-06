@@ -14,8 +14,8 @@ import (
 
 	nnsq "github.com/nsqio/go-nsq"
 
-	"liveearth/infrastructure/component/nsq/conn"
-	"liveearth/infrastructure/config"
+	"go_infrastructure/component/nsq/conn"
+	"go_infrastructure/config"
 )
 
 const (

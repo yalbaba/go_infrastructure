@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/macro"
+	"go_infrastructure/pkg/iris/macro"
 )
 
 // RouteReadOnly allows decoupled access to the current route

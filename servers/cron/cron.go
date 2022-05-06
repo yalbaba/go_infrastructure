@@ -1,11 +1,11 @@
 package cron
 
 import (
-	"liveearth/infrastructure/component"
-	"liveearth/infrastructure/consts"
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/servers"
+	"go_infrastructure/component"
+	"go_infrastructure/consts"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/servers"
 	"net/http/httptest"
 	"sync"
 

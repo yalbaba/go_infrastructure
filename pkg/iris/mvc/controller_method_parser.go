@@ -8,8 +8,8 @@ import (
 	"strings"
 	"unicode"
 
-	"liveearth/infrastructure/pkg/iris/core/router"
-	"liveearth/infrastructure/pkg/iris/macro"
+	"go_infrastructure/pkg/iris/core/router"
+	"go_infrastructure/pkg/iris/macro"
 )
 
 const (

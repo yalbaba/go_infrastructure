@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 
 	"github.com/ryanuber/columnize"
 )

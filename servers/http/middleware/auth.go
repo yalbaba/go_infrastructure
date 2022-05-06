@@ -1,10 +1,10 @@
 package middleware
 
 import (
-	"liveearth/infrastructure/models"
-	"liveearth/infrastructure/pkg/errno"
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/servers/http/middleware/jwt"
+	"go_infrastructure/models"
+	"go_infrastructure/pkg/errno"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/servers/http/middleware/jwt"
 	"strings"
 )
 

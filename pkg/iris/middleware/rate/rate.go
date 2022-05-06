@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 
 	"golang.org/x/time/rate"
 )

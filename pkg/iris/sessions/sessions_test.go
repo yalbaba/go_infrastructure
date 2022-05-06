@@ -3,10 +3,10 @@ package sessions_test
 import (
 	"testing"
 
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/pkg/iris/context"
-	"liveearth/infrastructure/pkg/iris/httptest"
-	"liveearth/infrastructure/pkg/iris/sessions"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/httptest"
+	"go_infrastructure/pkg/iris/sessions"
 )
 
 func TestSessions(t *testing.T) {

@@ -3,7 +3,7 @@ package versioning
 import (
 	"strings"
 
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris/context"
 )
 
 const (

@@ -3,8 +3,8 @@ package jwt
 import (
 	"errors"
 	"fmt"
-	"liveearth/infrastructure/pkg/iris"
-	"liveearth/infrastructure/pkg/iris/context"
+	"go_infrastructure/pkg/iris"
+	"go_infrastructure/pkg/iris/context"
 	"strings"
 
 	"github.com/dgrijalva/jwt-go"
