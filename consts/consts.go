@@ -1,5 +1,7 @@
 package consts
 
+type LikeOp uint8
+
 type ServerType uint8
 
 const (

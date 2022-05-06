@@ -2,45 +2,36 @@ package component
 
 import (
 	"fmt"
-	"gorm.io/gorm"
-	"liveearth/infrastructure/component/orm"
-	"liveearth/infrastructure/component/registry"
-	iuser "liveearth/infrastructure/models/user"
-	"liveearth/infrastructure/protos/push_stream"
 	"reflect"
 	"time"
-
-	nnsq "github.com/nsqio/go-nsq"
-
-	"liveearth/infrastructure/component/nsq"
-	"liveearth/infrastructure/pkg/iris"
-
-	logger "github.com/sereiner/library/log"
-
-	"liveearth/infrastructure/component/mg"
-	"liveearth/infrastructure/component/mq"
-	"liveearth/infrastructure/pkg/errno"
-	"liveearth/infrastructure/utils"
-
-	"github.com/sereiner/library/types"
-
-	"go.mongodb.org/mongo-driver/mongo"
-
-	"liveearth/infrastructure/component/cache"
-	idb "liveearth/infrastructure/component/db"
-	"liveearth/infrastructure/component/es"
-	"liveearth/infrastructure/component/rpccli"
-
-	jsoniter "github.com/json-iterator/go"
 
 	"github.com/asaskevich/govalidator"
 	"github.com/go-redis/redis"
 	"github.com/iris-contrib/middleware/jwt"
-
+	jsoniter "github.com/json-iterator/go"
+	nnsq "github.com/nsqio/go-nsq"
 	"github.com/olivere/elastic/v7"
 	"github.com/sereiner/library/db"
-
+	logger "github.com/sereiner/library/log"
+	"github.com/sereiner/library/types"
+	"go.mongodb.org/mongo-driver/mongo"
 	"golang.org/x/sync/errgroup"
+	"gorm.io/gorm"
+
+	"liveearth/infrastructure/component/cache"
+	idb "liveearth/infrastructure/component/db"
+	"liveearth/infrastructure/component/es"
+	"liveearth/infrastructure/component/mg"
+	"liveearth/infrastructure/component/mq"
+	"liveearth/infrastructure/component/nsq"
+	"liveearth/infrastructure/component/orm"
+	"liveearth/infrastructure/component/registry"
+	"liveearth/infrastructure/component/rpccli"
+	iuser "liveearth/infrastructure/models/user"
+	"liveearth/infrastructure/pkg/errno"
+	"liveearth/infrastructure/pkg/iris"
+	"liveearth/infrastructure/protos/push_stream"
+	"liveearth/infrastructure/utils"
 )
 
 // Container 容器接口, 需要的组件在这里添加

@@ -3,8 +3,6 @@ package rpccli
 import (
 	"context"
 	"fmt"
-	"liveearth/infrastructure/consts"
-	"liveearth/infrastructure/protos/push_stream"
 	"strings"
 	"time"
 
@@ -15,6 +13,8 @@ import (
 
 	"liveearth/infrastructure/component/rpccli/balancer"
 	"liveearth/infrastructure/config"
+	"liveearth/infrastructure/consts"
+	"liveearth/infrastructure/protos/push_stream"
 )
 
 type IComponentRpcClient interface {

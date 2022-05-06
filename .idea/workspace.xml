@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="2301e69f-ecfe-41cb-8545-6252172ce1ef" name="默认更改列表" comment="修改文件">
       <change beforePath="$PROJECT_DIR$/.idea/go_infrastructure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go_infrastructure.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/component.go" beforeDir="false" afterPath="$PROJECT_DIR$/component/component.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/rpccli/balancer/smooth_roundrobin/smooth_roundrobin.go" beforeDir="false" afterPath="$PROJECT_DIR$/component/rpccli/balancer/smooth_roundrobin/smooth_roundrobin.go" afterDir="false" />
+=======
+    <list default="true" id="2301e69f-ecfe-41cb-8545-6252172ce1ef" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/component.go" beforeDir="false" afterPath="$PROJECT_DIR$/component/component.go" afterDir="false" />
+>>>>>>> dd842ca... 删除旧代码
       <change beforePath="$PROJECT_DIR$/component/rpccli/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/component/rpccli/client.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consts/activity.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/consts/app_update.go" beforeDir="false" />
@@ -17,6 +23,7 @@
       <change beforePath="$PROJECT_DIR$/consts/common.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/consts/config.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/consts/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/consts/consts.go" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/consts/footprint.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/consts/geo.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/consts/guide_key.go" beforeDir="false" />
@@ -25,10 +32,18 @@
       <change beforePath="$PROJECT_DIR$/consts/nsq_topic.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/consts/position.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/consts/position_test.go" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/consts/context_storage_field.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/footprint.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/guide_key.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/message_push.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts/nsq_topic.go" beforeDir="false" />
+>>>>>>> dd842ca... 删除旧代码
       <change beforePath="$PROJECT_DIR$/consts/queue_key.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/consts/redis_key.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/consts/rpc_client_name.go" beforeDir="false" afterPath="$PROJECT_DIR$/consts/rpc_client_name.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consts/topic_history.go" beforeDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/models/activity/tokyo_olympic_base.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models/activity/tokyo_olympic_h5_statistic.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models/activity/tokyo_olympic_live_room.go" beforeDir="false" />
@@ -233,6 +248,8 @@
       <change beforePath="$PROJECT_DIR$/models/wmts/topic_model.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/errno/code.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/errno/code.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/protos/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/protos/Makefile" afterDir="false" />
+=======
+>>>>>>> dd842ca... 删除旧代码
       <change beforePath="$PROJECT_DIR$/protos/comment/comment.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/protos/comment/comment.proto" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/protos/content/content.pb.go" beforeDir="false" />
@@ -240,7 +257,10 @@
       <change beforePath="$PROJECT_DIR$/protos/content/yz_token_test.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/protos/data_platform/data_platform.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/protos/data_platform/data_platform.proto" beforeDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/protos/distributed_lock/distributed_lock.pb.go" beforeDir="false" />
+=======
+>>>>>>> dd842ca... 删除旧代码
       <change beforePath="$PROJECT_DIR$/protos/footprint/footprint.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/protos/footprint/footprint.proto" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/protos/geofence/geofence.pb.go" beforeDir="false" />
@@ -261,11 +281,14 @@
       <change beforePath="$PROJECT_DIR$/protos/user/user.proto" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/protos/wetoken/wetoken.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/protos/wetoken/wetoken.proto" beforeDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/servers/rpc/rpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/servers/rpc/rpc.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/oss.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/oss_test.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/stream.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/stream_test.go" beforeDir="false" />
+=======
+>>>>>>> dd842ca... 删除旧代码
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,10 +297,38 @@
   </component>
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="registery" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1637428273" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="registery" />
+                    <option name="lastUsedInstant" value="1637428115" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
@@ -372,10 +423,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
+<<<<<<< HEAD
     <MESSAGE value="修改文件" />
     <option name="LAST_COMMIT_MESSAGE" value="修改文件" />
+=======
+    <MESSAGE value="添加注册中心" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加注册中心" />
+>>>>>>> dd842ca... 删除旧代码
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="WindowStateProjectService">
+    <state x="349" y="139" width="741" height="622" key="find.popup" timestamp="1651850734842">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="349" y="139" width="741" height="622" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1651850734842" />
+  </component>
+>>>>>>> dd842ca... 删除旧代码
 </project>
