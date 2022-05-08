@@ -82,7 +82,7 @@ func (c *wsHandler) readPump(hf Handler, ctx iris.Context) {
 
 		}
 
-		err = c.conn.WriteMessage(websocket.BinaryMessage, res)
+		err = c.conn.WriteMessage(websocket.TextMessage, res)
 		if err != nil {
 			ctx.Error("WriteMessage", err)
 			break
