@@ -3,6 +3,7 @@ package app
 import (
 	"flag"
 	"fmt"
+	"github.com/yalbaba/go_infrastructure/servers/ws"
 
 	"github.com/yalbaba/go_infrastructure/component/registry"
 
@@ -58,7 +59,7 @@ type IApp interface {
 	RegisterCronJob(name string, cron string, disable bool, handler cron.Handler)
 	RegisterNsqHandler(topic, channel string, handler nsq_consume.RegistryNsqConsumerHandlerFunc, opts ...nsq_consume.ConsumerOption)
 	RegisterMidJob(f func(component.Container))
-	RegisterWs(path string, handler http.Handler)
+	RegisterWs(path string, handler ws.Handler)
 	GetContainer() component.Container
 
 	Run() (string, error)
@@ -243,12 +244,12 @@ LOOP:
 	time.Sleep(time.Second)
 }
 
-func (s *UranusApp) RegisterWs(path string, handler http.Handler) {
+func (s *UranusApp) RegisterWs(path string, handler ws.Handler) {
 	if handler == nil || len(path) == 0 {
 		return
 	}
 
-	s.servers[consts.WsServer].RegisterService(map[string]http.Handler{
+	s.servers[consts.WsServer].RegisterService(map[string]ws.Handler{
 		path: handler,
 	})
 }

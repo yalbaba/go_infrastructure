@@ -11,7 +11,6 @@ import (
 	"github.com/yalbaba/go_infrastructure/pkg/exchange"
 	"github.com/yalbaba/go_infrastructure/pkg/iris"
 	"github.com/yalbaba/go_infrastructure/servers"
-	"github.com/yalbaba/go_infrastructure/servers/http"
 	"github.com/yalbaba/go_infrastructure/servers/http/middleware"
 
 	"github.com/gorilla/websocket"
@@ -48,7 +47,7 @@ func (w *WsServer) RegisterService(sc ...interface{}) {
 		return
 	}
 
-	m, ok := sc[0].(map[string]http.Handler)
+	m, ok := sc[0].(map[string]Handler)
 	if !ok {
 		w.c.Error("ws 服务注册函数类型错误")
 		return
@@ -64,7 +63,7 @@ var (
 	upgrader = websocket.Upgrader{}
 )
 
-func (w *WsServer) handler(hf http.Handler) iris.Handler {
+func (w *WsServer) handler(hf Handler) iris.Handler {
 
 	return func(ctx iris.Context) {
 
