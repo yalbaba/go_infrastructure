@@ -1,4 +1,4 @@
-module go_infrastructure
+module github.com/yalbaba/go_infrastructure
 
 go 1.15
 
