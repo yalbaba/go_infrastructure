@@ -11,7 +11,7 @@ import (
 	"strings"
 	"sync"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 
 	"github.com/iris-contrib/pongo2"
 )

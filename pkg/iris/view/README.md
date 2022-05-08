@@ -38,7 +38,7 @@ You can serve [quicktemplate](https://github.com/valyala/quicktemplate) files to
 // file: main.go
 package main
 
-import "go_infrastructure/pkg/iris"
+import "github.com/yalbaba/go_infrastructure/pkg/iris"
 
 func main() {
     app := iris.New()
@@ -85,7 +85,7 @@ func main() {
 ```go
 package main
 
-import "go_infrastructure/pkg/iris"
+import "github.com/yalbaba/go_infrastructure/pkg/iris"
 
 func main() {
     app := iris.New()
@@ -135,7 +135,7 @@ Example code:
 ```go
 package main
 
-import "go_infrastructure/pkg/iris"
+import "github.com/yalbaba/go_infrastructure/pkg/iris"
 
 func main() {
     app := iris.New()

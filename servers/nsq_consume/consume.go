@@ -16,9 +16,9 @@ import (
 	"github.com/nsqio/go-nsq"
 	"go.uber.org/zap"
 
-	"go_infrastructure/component"
-	"go_infrastructure/config"
-	"go_infrastructure/utils"
+	"github.com/yalbaba/go_infrastructure/component"
+	"github.com/yalbaba/go_infrastructure/config"
+	"github.com/yalbaba/go_infrastructure/utils"
 )
 
 type Context struct {

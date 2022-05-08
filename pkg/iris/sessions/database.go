@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"go_infrastructure/pkg/iris/core/memstore"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/memstore"
 )
 
 // ErrNotImplemented is returned when a particular feature is not yet implemented yet.

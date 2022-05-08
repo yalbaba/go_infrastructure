@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"go_infrastructure/pkg/iris/cache/cfg"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/cfg"
 )
 
 // URIBuilder is the requested url builder

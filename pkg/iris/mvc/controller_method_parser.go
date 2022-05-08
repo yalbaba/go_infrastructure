@@ -8,8 +8,8 @@ import (
 	"strings"
 	"unicode"
 
-	"go_infrastructure/pkg/iris/core/router"
-	"go_infrastructure/pkg/iris/macro"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/router"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro"
 )
 
 const (

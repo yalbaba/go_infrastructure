@@ -5,7 +5,7 @@ package editor
 Usage:
 
 
-	import "go_infrastructure/pkg/iris/typescript/editor"
+	import "github.com/yalbaba/go_infrastructure/pkg/iris/typescript/editor"
 	[...]
 
 	app := iris.New()
@@ -30,7 +30,7 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"go_infrastructure/pkg/iris/typescript/npm"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/typescript/npm"
 )
 
 type (

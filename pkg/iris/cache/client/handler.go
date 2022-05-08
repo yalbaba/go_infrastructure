@@ -4,9 +4,9 @@ import (
 	"sync"
 	"time"
 
-	"go_infrastructure/pkg/iris/cache/client/rule"
-	"go_infrastructure/pkg/iris/cache/entry"
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/client/rule"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/entry"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // Handler the local cache service handler contains

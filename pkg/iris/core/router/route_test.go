@@ -5,7 +5,7 @@ package router
 import (
 	"testing"
 
-	"go_infrastructure/pkg/iris/macro"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro"
 )
 
 func TestRouteStaticPath(t *testing.T) {

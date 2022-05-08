@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/pkg/iris/httptest"
-	"go_infrastructure/pkg/iris/versioning"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/httptest"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/versioning"
 )
 
 func TestDeprecated(t *testing.T) {

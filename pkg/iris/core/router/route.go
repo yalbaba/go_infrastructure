@@ -5,9 +5,9 @@ import (
 	"strings"
 	"time"
 
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/macro"
-	"go_infrastructure/pkg/iris/macro/handler"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro/handler"
 )
 
 // Route contains the information about a registered Route.

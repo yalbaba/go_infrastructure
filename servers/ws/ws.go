@@ -2,16 +2,17 @@ package ws
 
 import (
 	sctx "context"
-	"go_infrastructure/component"
-	"go_infrastructure/config"
-	"go_infrastructure/consts"
-	"go_infrastructure/pkg/exchange"
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/servers"
-	"go_infrastructure/servers/http"
-	"go_infrastructure/servers/http/middleware"
 	http2 "net/http"
 	"time"
+
+	"github.com/yalbaba/go_infrastructure/component"
+	"github.com/yalbaba/go_infrastructure/config"
+	"github.com/yalbaba/go_infrastructure/consts"
+	"github.com/yalbaba/go_infrastructure/pkg/exchange"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/servers"
+	"github.com/yalbaba/go_infrastructure/servers/http"
+	"github.com/yalbaba/go_infrastructure/servers/http/middleware"
 
 	"github.com/gorilla/websocket"
 )

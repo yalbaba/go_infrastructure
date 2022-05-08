@@ -1,10 +1,10 @@
 package client
 
 import (
-	"go_infrastructure/pkg/iris/cache/cfg"
-	"go_infrastructure/pkg/iris/cache/client/rule"
-	"go_infrastructure/pkg/iris/cache/ruleset"
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/cfg"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/client/rule"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/ruleset"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // DefaultRuleSet is a list of the default pre-cache validators

@@ -3,7 +3,7 @@ package router
 import (
 	"strings"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 const (

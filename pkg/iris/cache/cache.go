@@ -9,8 +9,8 @@ Example code:
 		 import (
 		 	"time"
 
-		 	"go_infrastructure/pkg/iris"
-		 	"go_infrastructure/pkg/iris/cache"
+		 	"github.com/yalbaba/go_infrastructure/pkg/iris"
+		 	"github.com/yalbaba/go_infrastructure/pkg/iris/cache"
 		 )
 
 		 func main(){
@@ -30,8 +30,8 @@ package cache
 import (
 	"time"
 
-	"go_infrastructure/pkg/iris/cache/client"
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/client"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // Cache accepts the cache expiration duration.

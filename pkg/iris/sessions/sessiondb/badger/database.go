@@ -8,7 +8,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"go_infrastructure/pkg/iris/sessions"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/sessions"
 
 	"github.com/dgraph-io/badger"
 	"github.com/kataras/golog"

@@ -3,8 +3,8 @@ package hero
 import (
 	"reflect"
 
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/hero/di"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/hero/di"
 )
 
 // weak because we don't have access to the path, neither

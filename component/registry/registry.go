@@ -3,10 +3,11 @@ package registry
 import (
 	"context"
 	"fmt"
-	"go_infrastructure/component/rpccli/balancer/smooth_roundrobin"
-	"go_infrastructure/config"
-	"go_infrastructure/consts"
-	"go_infrastructure/utils"
+
+	"github.com/yalbaba/go_infrastructure/component/rpccli/balancer/smooth_roundrobin"
+	"github.com/yalbaba/go_infrastructure/config"
+	"github.com/yalbaba/go_infrastructure/consts"
+	"github.com/yalbaba/go_infrastructure/utils"
 
 	jsoniter "github.com/json-iterator/go"
 	"github.com/ozonru/etcd/clientv3"

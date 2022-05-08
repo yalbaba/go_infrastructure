@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"strconv"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 func getRequestLogs(ctx context.Context) string {

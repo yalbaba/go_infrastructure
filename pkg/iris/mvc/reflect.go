@@ -3,7 +3,7 @@ package mvc
 import (
 	"reflect"
 
-	"go_infrastructure/pkg/iris/hero/di"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/hero/di"
 )
 
 var (

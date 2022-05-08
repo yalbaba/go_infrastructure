@@ -1,7 +1,7 @@
 package rule
 
 import (
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // Conditional is a Rule witch adds a predicate in order to its methods to execute

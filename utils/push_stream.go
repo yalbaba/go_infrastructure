@@ -2,7 +2,8 @@ package utils
 
 import (
 	"fmt"
-	"go_infrastructure/consts"
+
+	"github.com/yalbaba/go_infrastructure/consts"
 
 	"github.com/vmihailenco/msgpack/v5"
 	"github.com/zlyuancn/zdingtalk"

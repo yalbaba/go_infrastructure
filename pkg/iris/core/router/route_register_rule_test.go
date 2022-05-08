@@ -4,9 +4,9 @@ import (
 	"reflect"
 	"testing"
 
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/pkg/iris/core/router"
-	"go_infrastructure/pkg/iris/httptest"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/router"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/httptest"
 )
 
 func TestRegisterRule(t *testing.T) {

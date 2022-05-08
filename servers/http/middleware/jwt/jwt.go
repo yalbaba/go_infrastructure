@@ -3,9 +3,10 @@ package jwt
 import (
 	"errors"
 	"fmt"
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/pkg/iris/context"
 	"strings"
+
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 
 	"github.com/dgrijalva/jwt-go"
 

@@ -4,10 +4,11 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"go_infrastructure/component/rpccli/balancer"
-	"go_infrastructure/utils"
 	"sync"
 	"time"
+
+	"github.com/yalbaba/go_infrastructure/component/rpccli/balancer"
+	"github.com/yalbaba/go_infrastructure/utils"
 
 	"github.com/coreos/etcd/mvcc/mvccpb"
 	jsoniter "github.com/json-iterator/go"

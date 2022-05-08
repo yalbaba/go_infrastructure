@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"strings"
 
-	"go_infrastructure/pkg/iris/macro/interpreter/ast"
-	"go_infrastructure/pkg/iris/macro/interpreter/lexer"
-	"go_infrastructure/pkg/iris/macro/interpreter/token"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro/interpreter/ast"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro/interpreter/lexer"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro/interpreter/token"
 )
 
 // Parse takes a route "fullpath"

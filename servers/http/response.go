@@ -1,8 +1,8 @@
 package http
 
 import (
-	"go_infrastructure/pkg/errno"
-	"go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/errno"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
 )
 
 type Handler func(ctx iris.Context) interface{}

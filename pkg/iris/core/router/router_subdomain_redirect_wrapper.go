@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strings"
 
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/core/netutil"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/netutil"
 )
 
 type subdomainRedirectWrapper struct {

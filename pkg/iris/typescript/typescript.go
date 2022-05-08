@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"go_infrastructure/pkg/iris/typescript/npm"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/typescript/npm"
 )
 
 type (

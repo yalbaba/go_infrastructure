@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"sync"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 
 	"github.com/schollz/closestmatch"
 )

@@ -3,8 +3,8 @@ package mvc
 import (
 	"reflect"
 
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/macro"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro"
 )
 
 func getPathParamsForInput(startParamIndex int, params []macro.TemplateParam, funcIn ...reflect.Type) (values []reflect.Value) {

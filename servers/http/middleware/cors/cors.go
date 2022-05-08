@@ -1,12 +1,13 @@
 package cors
 
 import (
-	"go_infrastructure/pkg/iris"
 	"log"
 	"net/http"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
 )
 
 // Options is a configuration container to setup the CORS middleware.

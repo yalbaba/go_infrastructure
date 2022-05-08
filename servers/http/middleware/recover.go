@@ -2,10 +2,11 @@ package middleware
 
 import (
 	"fmt"
-	"go_infrastructure/component"
-	"go_infrastructure/pkg/iris"
 	"runtime"
 	"strconv"
+
+	"github.com/yalbaba/go_infrastructure/component"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
 )
 
 func Recover(c component.Container) iris.Handler {

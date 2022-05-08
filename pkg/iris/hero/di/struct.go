@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"sort"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // Scope is the struct injector's struct value scope/permant state.

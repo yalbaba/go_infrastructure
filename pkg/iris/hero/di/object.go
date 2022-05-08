@@ -4,7 +4,7 @@ import (
 	"errors"
 	"reflect"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // BindType is the type of a binded object/value, it's being used to

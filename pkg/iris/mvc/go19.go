@@ -2,7 +2,7 @@
 
 package mvc
 
-import "go_infrastructure/pkg/iris/hero"
+import "github.com/yalbaba/go_infrastructure/pkg/iris/hero"
 
 type (
 

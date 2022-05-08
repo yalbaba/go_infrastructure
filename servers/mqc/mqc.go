@@ -1,12 +1,13 @@
 package mqc
 
 import (
-	"go_infrastructure/component"
-	"go_infrastructure/config"
-	"go_infrastructure/consts"
-	"go_infrastructure/servers"
 	"sync"
 	"time"
+
+	"github.com/yalbaba/go_infrastructure/component"
+	"github.com/yalbaba/go_infrastructure/config"
+	"github.com/yalbaba/go_infrastructure/consts"
+	"github.com/yalbaba/go_infrastructure/servers"
 
 	"github.com/mikegleasonjr/workers"
 )

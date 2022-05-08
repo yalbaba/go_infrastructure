@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"time"
 
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 type (

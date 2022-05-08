@@ -3,7 +3,7 @@ package websocket
 import (
 	"net/http"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 
 	"github.com/kataras/neffos"
 	"github.com/kataras/neffos/gobwas"

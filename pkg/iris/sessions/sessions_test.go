@@ -3,10 +3,10 @@ package sessions_test
 import (
 	"testing"
 
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/httptest"
-	"go_infrastructure/pkg/iris/sessions"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/httptest"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/sessions"
 )
 
 func TestSessions(t *testing.T) {

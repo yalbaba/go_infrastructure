@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"strings"
 
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/hero/di"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/hero/di"
 
 	"github.com/fatih/structs"
 )

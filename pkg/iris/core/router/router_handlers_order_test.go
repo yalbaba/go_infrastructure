@@ -9,10 +9,10 @@ package router_test
 import (
 	"testing"
 
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 
-	"go_infrastructure/pkg/iris/httptest"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/httptest"
 )
 
 // test registering of below handlers

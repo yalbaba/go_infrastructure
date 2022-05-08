@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"go_infrastructure/pkg/iris/macro"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro"
 )
 
 // RouteReadOnly allows decoupled access to the current route

@@ -3,7 +3,7 @@ package entry
 import (
 	"time"
 
-	"go_infrastructure/pkg/iris/cache/cfg"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/cfg"
 )
 
 // Entry is the cache entry

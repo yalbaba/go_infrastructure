@@ -2,9 +2,10 @@ package middleware
 
 import (
 	"fmt"
-	iuser "go_infrastructure/models/user"
-	"go_infrastructure/pkg/iris"
 	"time"
+
+	iuser "github.com/yalbaba/go_infrastructure/models/user"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
 
 	"github.com/iris-contrib/middleware/jwt"
 	jsoniter "github.com/json-iterator/go"

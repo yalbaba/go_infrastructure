@@ -1,7 +1,7 @@
 package rule
 
 import (
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // Rule a superset of validators

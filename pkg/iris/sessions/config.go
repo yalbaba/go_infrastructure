@@ -3,7 +3,7 @@ package sessions
 import (
 	"time"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 
 	uuid "github.com/iris-contrib/go.uuid"
 )

@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"go_infrastructure/pkg/iris/core/memstore"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/memstore"
 )
 
 // RequestParams is a key string - value string storage which

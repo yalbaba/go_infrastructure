@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"strings"
 
-	"go_infrastructure/pkg/iris/core/netutil"
-	"go_infrastructure/pkg/iris/macro"
-	"go_infrastructure/pkg/iris/macro/interpreter/ast"
-	"go_infrastructure/pkg/iris/macro/interpreter/lexer"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/netutil"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro/interpreter/ast"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro/interpreter/lexer"
 )
 
 // Param receives a parameter name prefixed with the ParamStart symbol.

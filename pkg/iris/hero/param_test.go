@@ -3,7 +3,7 @@ package hero
 import (
 	"testing"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 func TestPathParams(t *testing.T) {

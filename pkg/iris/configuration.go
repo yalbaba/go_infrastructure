@@ -6,8 +6,6 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/core/netutil"
 	"net/http"
 	"os"
 	"os/exec"
@@ -15,6 +13,9 @@ import (
 	"path/filepath"
 	"runtime"
 	"strings"
+
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/netutil"
 
 	"github.com/BurntSushi/toml"
 	"github.com/kataras/sitemap"

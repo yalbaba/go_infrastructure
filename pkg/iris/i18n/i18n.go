@@ -9,8 +9,8 @@ import (
 	"strings"
 	"sync"
 
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/core/router"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/router"
 
 	"golang.org/x/text/language"
 )

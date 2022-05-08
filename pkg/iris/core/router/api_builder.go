@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/core/errgroup"
-	"go_infrastructure/pkg/iris/macro"
-	macroHandler "go_infrastructure/pkg/iris/macro/handler"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/errgroup"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro"
+	macroHandler "github.com/yalbaba/go_infrastructure/pkg/iris/macro/handler"
 )
 
 // MethodNone is a Virtual method

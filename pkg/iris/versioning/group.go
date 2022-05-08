@@ -3,8 +3,8 @@ package versioning
 import (
 	"net/http"
 
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/core/router"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/router"
 )
 
 type (

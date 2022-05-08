@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 //

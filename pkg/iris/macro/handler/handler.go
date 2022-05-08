@@ -3,8 +3,8 @@
 package handler
 
 import (
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/macro"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro"
 )
 
 // CanMakeHandler reports whether a macro template needs a special macro's evaluator handler to be validated

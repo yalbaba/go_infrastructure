@@ -3,8 +3,9 @@ package mg
 import (
 	"context"
 	"fmt"
-	"go_infrastructure/config"
 	"time"
+
+	"github.com/yalbaba/go_infrastructure/config"
 
 	"github.com/sereiner/library/concurrent/cmap"
 	"go.mongodb.org/mongo-driver/mongo"

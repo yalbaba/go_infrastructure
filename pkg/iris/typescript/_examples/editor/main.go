@@ -1,9 +1,9 @@
 package main
 
 import (
-	"go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
 
-	"go_infrastructure/pkg/iris/typescript/editor"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/typescript/editor"
 )
 
 func main() {

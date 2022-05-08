@@ -1,7 +1,7 @@
 package rule
 
 import (
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // Validators are introduced to implement the RFC about cache (https://tools.ietf.org/html/rfc7234#section-1.1).

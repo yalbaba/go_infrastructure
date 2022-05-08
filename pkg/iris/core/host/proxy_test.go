@@ -2,15 +2,15 @@
 package host_test
 
 import (
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 	"net"
 	"net/url"
 	"testing"
 	"time"
 
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/core/host"
-	"go_infrastructure/pkg/iris/httptest"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/host"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/httptest"
 )
 
 func TestProxy(t *testing.T) {

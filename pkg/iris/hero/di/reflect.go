@@ -3,7 +3,7 @@ package di
 import (
 	"reflect"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // EmptyIn is just an empty slice of reflect.Value.

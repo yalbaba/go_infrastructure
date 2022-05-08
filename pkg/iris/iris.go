@@ -17,24 +17,24 @@ import (
 	"time"
 
 	// context for the handlers
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 	// core packages, required to build the application
-	"go_infrastructure/pkg/iris/core/errgroup"
-	"go_infrastructure/pkg/iris/core/host"
-	"go_infrastructure/pkg/iris/core/netutil"
-	"go_infrastructure/pkg/iris/core/router"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/errgroup"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/host"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/netutil"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/router"
 
 	// handlerconv conversions
-	"go_infrastructure/pkg/iris/core/handlerconv"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/handlerconv"
 	// cache conversions
-	"go_infrastructure/pkg/iris/cache"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache"
 	// view
-	"go_infrastructure/pkg/iris/view"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/view"
 	// i18n
-	"go_infrastructure/pkg/iris/i18n"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/i18n"
 	// handlers used in `Default` function
-	requestLogger "go_infrastructure/pkg/iris/middleware/logger"
-	"go_infrastructure/pkg/iris/middleware/recover"
+	requestLogger "github.com/yalbaba/go_infrastructure/pkg/iris/middleware/logger"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/middleware/recover"
 
 	"github.com/kataras/golog"
 	"gopkg.in/yaml.v3"
@@ -454,7 +454,7 @@ var (
 	// Cache304 sends a `StatusNotModified` (304) whenever
 	// the "If-Modified-Since" request header (time) is before the
 	// time.Now() + expiresEvery (always compared to their UTC values).
-	// Use this, which is a shortcut of the, `chache#Cache304` instead of the "go_infrastructure/pkg/iris/cache" or iris.Cache
+	// Use this, which is a shortcut of the, `chache#Cache304` instead of the "github.com/yalbaba/go_infrastructure/pkg/iris/cache" or iris.Cache
 	// for better performance.
 	// Clients that are compatible with the http RCF (all browsers are and tools like postman)
 	// will handle the caching.
@@ -687,7 +687,7 @@ func (app *Application) Shutdown(ctx stdContext.Context) error {
 // If error occurred while building the Application, the returns type of error will be an *errgroup.Group
 // which let the callers to inspect the errors and cause, usage:
 //
-// import "go_infrastructure/pkg/iris/core/errgroup"
+// import "github.com/yalbaba/go_infrastructure/pkg/iris/core/errgroup"
 //
 // errgroup.Walk(app.Build(), func(typ interface{}, err error) {
 // 	app.Logger().Errorf("%s: %s", typ, err)

@@ -2,7 +2,8 @@ package db
 
 import (
 	"fmt"
-	"go_infrastructure/config"
+
+	"github.com/yalbaba/go_infrastructure/config"
 
 	"github.com/sereiner/library/concurrent/cmap"
 	"github.com/sereiner/library/db"

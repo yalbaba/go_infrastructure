@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"go_infrastructure/pkg/iris/core/netutil"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/netutil"
 )
 
 func singleJoiningSlash(a, b string) string {

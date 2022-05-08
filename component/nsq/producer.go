@@ -14,8 +14,8 @@ import (
 
 	nnsq "github.com/nsqio/go-nsq"
 
-	"go_infrastructure/component/nsq/conn"
-	"go_infrastructure/config"
+	"github.com/yalbaba/go_infrastructure/component/nsq/conn"
+	"github.com/yalbaba/go_infrastructure/config"
 )
 
 const (

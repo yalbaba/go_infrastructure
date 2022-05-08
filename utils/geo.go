@@ -11,17 +11,14 @@ package utils
 import (
 	"errors"
 	"fmt"
+	jsoniter "github.com/json-iterator/go"
+	"github.com/kayon/iploc"
+	"github.com/valyala/fasthttp"
+	"github.com/yalbaba/go_infrastructure/consts"
 	"math"
 	"strconv"
 	"strings"
-
-	"github.com/kayon/iploc"
-	"github.com/valyala/fasthttp"
 	"xorm.io/xorm"
-
-	jsoniter "github.com/json-iterator/go"
-
-	"go_infrastructure/consts"
 )
 
 var Geo = new(geoUtil)

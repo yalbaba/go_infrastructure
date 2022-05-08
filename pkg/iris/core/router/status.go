@@ -4,7 +4,7 @@ import (
 	"net/http" // just for status codes
 	"sync"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 func statusCodeSuccessful(statusCode int) bool {

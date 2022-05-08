@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"go_infrastructure/pkg/iris/macro/interpreter/ast"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro/interpreter/ast"
 )
 
 type simpleParamType string

@@ -3,14 +3,15 @@ package app
 import (
 	"flag"
 	"fmt"
-	"go_infrastructure/component/registry"
 
-	"go_infrastructure/consts"
-	"go_infrastructure/pkg/logfilter"
-	"go_infrastructure/servers/cron"
-	"go_infrastructure/servers/http"
-	"go_infrastructure/servers/mqc"
-	"go_infrastructure/servers/nsq_consume"
+	"github.com/yalbaba/go_infrastructure/component/registry"
+
+	"github.com/yalbaba/go_infrastructure/consts"
+	"github.com/yalbaba/go_infrastructure/pkg/logfilter"
+	"github.com/yalbaba/go_infrastructure/servers/cron"
+	"github.com/yalbaba/go_infrastructure/servers/http"
+	"github.com/yalbaba/go_infrastructure/servers/mqc"
+	"github.com/yalbaba/go_infrastructure/servers/nsq_consume"
 
 	logger "github.com/sereiner/library/log"
 
@@ -18,7 +19,7 @@ import (
 
 	"sync"
 
-	"go_infrastructure/servers"
+	"github.com/yalbaba/go_infrastructure/servers"
 
 	"os"
 	"os/signal"
@@ -33,16 +34,16 @@ import (
 
 	"time"
 
-	"go_infrastructure/component"
-	"go_infrastructure/config"
-	_ "go_infrastructure/servers/cron"
-	_ "go_infrastructure/servers/http"
-	_ "go_infrastructure/servers/mqc"
-	_ "go_infrastructure/servers/nsq_consume"
-	_ "go_infrastructure/servers/rpc"
-	_ "go_infrastructure/servers/ws"
+	"github.com/yalbaba/go_infrastructure/component"
+	"github.com/yalbaba/go_infrastructure/config"
+	_ "github.com/yalbaba/go_infrastructure/servers/cron"
+	_ "github.com/yalbaba/go_infrastructure/servers/http"
+	_ "github.com/yalbaba/go_infrastructure/servers/mqc"
+	_ "github.com/yalbaba/go_infrastructure/servers/nsq_consume"
+	_ "github.com/yalbaba/go_infrastructure/servers/rpc"
+	_ "github.com/yalbaba/go_infrastructure/servers/ws"
 
-	"go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
 
 	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"

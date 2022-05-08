@@ -1,13 +1,14 @@
 package cron
 
 import (
-	"go_infrastructure/component"
-	"go_infrastructure/consts"
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/servers"
 	"net/http/httptest"
 	"sync"
+
+	"github.com/yalbaba/go_infrastructure/component"
+	"github.com/yalbaba/go_infrastructure/consts"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/servers"
 
 	"time"
 

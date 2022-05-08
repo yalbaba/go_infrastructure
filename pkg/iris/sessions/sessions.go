@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // A Sessions manager should be responsible to Start a sesion, based

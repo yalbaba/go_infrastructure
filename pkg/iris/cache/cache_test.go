@@ -7,14 +7,14 @@ import (
 	"testing"
 	"time"
 
-	"go_infrastructure/pkg/iris/cache"
-	"go_infrastructure/pkg/iris/cache/client"
-	"go_infrastructure/pkg/iris/cache/client/rule"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/client"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/client/rule"
 
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 
-	"go_infrastructure/pkg/iris/httptest"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/httptest"
 
 	"github.com/gavv/httpexpect"
 )

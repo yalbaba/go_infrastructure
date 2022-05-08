@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	"go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
 
 	"github.com/gavv/httpexpect"
 )

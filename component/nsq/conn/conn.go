@@ -12,7 +12,7 @@ import (
 	"fmt"
 	"sync"
 
-	"go_infrastructure/utils"
+	"github.com/yalbaba/go_infrastructure/utils"
 )
 
 // 默认组件名

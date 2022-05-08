@@ -2,8 +2,9 @@ package mq
 
 import (
 	"fmt"
-	"go_infrastructure/config"
 	"time"
+
+	"github.com/yalbaba/go_infrastructure/config"
 
 	"github.com/beanstalkd/go-beanstalk"
 

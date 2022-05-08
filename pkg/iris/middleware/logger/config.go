@@ -3,7 +3,7 @@ package logger
 import (
 	"time"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // The SkipperFunc signature, used to serve the main request without logs.

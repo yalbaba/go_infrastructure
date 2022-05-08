@@ -23,7 +23,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"go_infrastructure/pkg/iris/core/memstore"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/memstore"
 
 	"github.com/Shopify/goreferrer"
 	"github.com/fatih/structs"

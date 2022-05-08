@@ -2,14 +2,15 @@ package http
 
 import (
 	"context"
-	"go_infrastructure/component"
-	"go_infrastructure/config"
-	"go_infrastructure/consts"
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/servers"
-	"go_infrastructure/servers/http/middleware"
-	"go_infrastructure/servers/http/middleware/cors"
 	"time"
+
+	"github.com/yalbaba/go_infrastructure/component"
+	"github.com/yalbaba/go_infrastructure/config"
+	"github.com/yalbaba/go_infrastructure/consts"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/servers"
+	"github.com/yalbaba/go_infrastructure/servers/http/middleware"
+	"github.com/yalbaba/go_infrastructure/servers/http/middleware/cors"
 
 	inet "github.com/sereiner/library/net"
 )
@@ -31,7 +32,7 @@ func NewHttpServer(c component.Container) *HttpServer {
 	irisAPI.Logger().SetLevel("disable")
 	irisAPI.Use(
 		middleware.CheckAuth(),
-		middleware.LoggerMiddleware(),
+		middleware.LoggerMiddleware("http"),
 		cors.AllowAll(),
 		middleware.Recover(c),
 	)

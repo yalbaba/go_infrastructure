@@ -44,7 +44,7 @@ Installation
 
 The only requirement is the Go Programming Language, at least version 1.13.
 
-    $ go get go_infrastructure/pkg/iris@latest
+    $ go get github.com/yalbaba/go_infrastructure/pkg/iris@latest
 
 Wiki:
 

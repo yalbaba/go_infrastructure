@@ -2,8 +2,9 @@ package servers
 
 import (
 	"fmt"
-	"go_infrastructure/component"
-	"go_infrastructure/consts"
+
+	"github.com/yalbaba/go_infrastructure/component"
+	"github.com/yalbaba/go_infrastructure/consts"
 )
 
 type IServer interface {

@@ -2,8 +2,9 @@ package cache
 
 import (
 	"fmt"
-	"go_infrastructure/config"
 	"time"
+
+	"github.com/yalbaba/go_infrastructure/config"
 
 	"github.com/go-redis/redis"
 	"github.com/sereiner/library/concurrent/cmap"

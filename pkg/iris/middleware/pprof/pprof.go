@@ -7,8 +7,8 @@ import (
 	rpprof "runtime/pprof"
 	"strings"
 
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/core/handlerconv"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/handlerconv"
 )
 
 // New returns a new pprof (profile, cmdline, symbol, goroutine, heap, threadcreate, debug/block) Middleware.

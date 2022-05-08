@@ -3,9 +3,9 @@
 package iris
 
 import (
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/core/host"
-	"go_infrastructure/pkg/iris/core/router"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/host"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/router"
 )
 
 type (

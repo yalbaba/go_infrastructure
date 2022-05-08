@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"sync"
 
-	"go_infrastructure/pkg/iris/core/memstore"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/memstore"
 )
 
 type (

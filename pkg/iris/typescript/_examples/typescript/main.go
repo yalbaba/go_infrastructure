@@ -1,9 +1,9 @@
 package main
 
 import (
-	"go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
 
-	"go_infrastructure/pkg/iris/typescript"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/typescript"
 )
 
 // NOTE: Some machines don't allow to install typescript automatically, so if you don't have typescript installed

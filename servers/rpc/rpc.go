@@ -2,15 +2,16 @@ package rpc
 
 import (
 	"context"
-	"go_infrastructure/protos/push_stream"
 	"net"
 	"reflect"
 	"time"
 
-	"go_infrastructure/component"
-	"go_infrastructure/config"
-	"go_infrastructure/consts"
-	"go_infrastructure/servers"
+	"github.com/yalbaba/go_infrastructure/protos/push_stream"
+
+	"github.com/yalbaba/go_infrastructure/component"
+	"github.com/yalbaba/go_infrastructure/config"
+	"github.com/yalbaba/go_infrastructure/consts"
+	"github.com/yalbaba/go_infrastructure/servers"
 
 	inet "github.com/sereiner/library/net"
 

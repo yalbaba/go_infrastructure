@@ -3,7 +3,7 @@ package versioning
 import (
 	"time"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // DeprecationOptions describes the deprecation headers key-values.

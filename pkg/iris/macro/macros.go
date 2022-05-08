@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"go_infrastructure/pkg/iris/macro/interpreter/ast"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro/interpreter/ast"
 )
 
 var (

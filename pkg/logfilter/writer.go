@@ -4,8 +4,9 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"go_infrastructure/config"
 	"time"
+
+	"github.com/yalbaba/go_infrastructure/config"
 
 	"github.com/cyanBone/dingtalk_robot"
 	"github.com/cyanBone/dingtalk_robot/message"

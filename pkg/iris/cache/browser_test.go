@@ -5,11 +5,11 @@ import (
 	"testing"
 	"time"
 
-	"go_infrastructure/pkg/iris/cache"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache"
 
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/pkg/iris/context"
-	"go_infrastructure/pkg/iris/httptest"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/httptest"
 )
 
 func TestNoCache(t *testing.T) {

@@ -3,9 +3,9 @@ package macro
 import (
 	"reflect"
 
-	"go_infrastructure/pkg/iris/core/memstore"
-	"go_infrastructure/pkg/iris/macro/interpreter/ast"
-	"go_infrastructure/pkg/iris/macro/interpreter/parser"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/memstore"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro/interpreter/ast"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro/interpreter/parser"
 )
 
 // Template contains a route's path full parsed template.

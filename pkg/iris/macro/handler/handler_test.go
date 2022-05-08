@@ -3,7 +3,7 @@ package handler
 import (
 	"testing"
 
-	"go_infrastructure/pkg/iris/macro"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro"
 )
 
 func TestCanMakeHandler(t *testing.T) {

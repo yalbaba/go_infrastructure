@@ -1,7 +1,7 @@
 package rule
 
 import (
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // chainedRule is a Rule with next Rule

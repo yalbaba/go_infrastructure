@@ -3,7 +3,7 @@ package lexer
 import (
 	"testing"
 
-	"go_infrastructure/pkg/iris/macro/interpreter/token"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/macro/interpreter/token"
 )
 
 func TestNextToken(t *testing.T) {

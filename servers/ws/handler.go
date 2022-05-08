@@ -2,10 +2,11 @@ package ws
 
 import (
 	"fmt"
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/servers/http"
 	"sync"
 	"time"
+
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/servers/http"
 
 	"github.com/gorilla/websocket"
 )

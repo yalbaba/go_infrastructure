@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"time"
 
-	"go_infrastructure/pkg/iris/cache/cfg"
-	"go_infrastructure/pkg/iris/cache/client/rule"
-	"go_infrastructure/pkg/iris/cache/uri"
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/cfg"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/client/rule"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/cache/uri"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // ClientHandler is the client-side handler

@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"time"
 
-	"go_infrastructure/pkg/iris/sessions"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/sessions"
 
 	bolt "github.com/etcd-io/bbolt"
 	"github.com/kataras/golog"

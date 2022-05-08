@@ -4,7 +4,7 @@ import (
 	"errors"
 	"time"
 
-	"go_infrastructure/pkg/iris/sessions"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/sessions"
 
 	"github.com/kataras/golog"
 )

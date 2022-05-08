@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 )
 
 // FromStd converts native http.Handler & http.HandlerFunc to context.Handler.

@@ -13,7 +13,7 @@ import (
 
 	"golang.org/x/crypto/acme/autocert"
 
-	"go_infrastructure/pkg/iris/core/netutil"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/core/netutil"
 )
 
 // Configurator provides an easy way to modify

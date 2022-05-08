@@ -1,11 +1,12 @@
 package middleware
 
 import (
-	"go_infrastructure/models"
-	"go_infrastructure/pkg/errno"
-	"go_infrastructure/pkg/iris"
-	"go_infrastructure/servers/http/middleware/jwt"
 	"strings"
+
+	"github.com/yalbaba/go_infrastructure/models"
+	"github.com/yalbaba/go_infrastructure/pkg/errno"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/servers/http/middleware/jwt"
 )
 
 // MustCheckAuth 必须检查Auth

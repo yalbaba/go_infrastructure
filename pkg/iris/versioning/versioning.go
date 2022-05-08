@@ -1,7 +1,7 @@
 package versioning
 
 import (
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 
 	"github.com/hashicorp/go-version"
 )

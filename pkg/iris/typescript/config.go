@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"go_infrastructure/pkg/iris/typescript/npm"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/typescript/npm"
 )
 
 var (

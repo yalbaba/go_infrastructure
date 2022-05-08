@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"go_infrastructure/pkg/iris/context"
+	"github.com/yalbaba/go_infrastructure/pkg/iris/context"
 
 	"golang.org/x/time/rate"
 )

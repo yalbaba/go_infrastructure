@@ -1,6 +1,6 @@
 package app
 
-import "go_infrastructure/consts"
+import "github.com/yalbaba/go_infrastructure/consts"
 
 type option struct {
 	PlatName    string
