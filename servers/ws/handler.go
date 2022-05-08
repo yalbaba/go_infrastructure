@@ -5,10 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/yalbaba/go_infrastructure/pkg/iris"
-	"github.com/yalbaba/go_infrastructure/servers/http"
-
 	"github.com/gorilla/websocket"
+	"github.com/yalbaba/go_infrastructure/pkg/iris"
 )
 
 const (
@@ -48,8 +46,11 @@ func newWSHandler(conn *websocket.Conn) *wsHandler {
 	}
 }
 
+//ws handler
+type Handler func(ctx iris.Context, message []byte) interface{}
+
 //readPump 循环从读取客户端传入数据
-func (c *wsHandler) readPump(hf http.Handler, ctx iris.Context) {
+func (c *wsHandler) readPump(hf Handler, ctx iris.Context) {
 	defer func() {
 		c.close()
 	}()
@@ -65,9 +66,10 @@ func (c *wsHandler) readPump(hf http.Handler, ctx iris.Context) {
 			break
 		}
 
-		fmt.Printf("msg: %s\n", msg)
+		fmt.Printf("ws get message: %s\n", msg)
 
-		r := hf(ctx)
+		// 执行业务函数
+		r := hf(ctx, msg)
 
 		// Write
 		var res []byte
