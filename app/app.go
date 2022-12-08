@@ -128,7 +128,7 @@ func NewGApp(opts ...Option) IApp {
 
 func initConfig() {
 
-	flag.StringVar(&configPath, "c", "", "grpc_server config path")
+	flag.StringVar(&configPath, "f", "", "server config path")
 	flag.Parse()
 
 	if configPath == "" {
