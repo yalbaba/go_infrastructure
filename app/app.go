@@ -67,7 +67,7 @@ type IApp interface {
 	logger.ILogger
 }
 
-type UranusApp struct {
+type GApp struct {
 	component component.IComponent
 	servers   map[consts.ServerType]servers.IServer
 	daemon.Daemon
@@ -80,11 +80,11 @@ type UranusApp struct {
 	midJobs   []func(c component.Container)
 }
 
-func NewUranusApp(opts ...Option) IApp {
+func NewGApp(opts ...Option) IApp {
 
 	initConfig()
 
-	server := &UranusApp{
+	server := &GApp{
 		closeChan: make(chan struct{}),
 		interrupt: make(chan os.Signal, 1),
 		option:    &option{ServerTypes: make(map[consts.ServerType]bool)},
@@ -134,7 +134,7 @@ func initConfig() {
 	if configPath == "" {
 		// log.Warn("未指定配置文件路径! 将使用 ./configs/config_dev.toml 配置文件加载程序")
 
-		configPath = envs.GetString("CACHE_CONFIG", "./configs/config_dev.toml")
+		configPath = envs.GetString("CACHE_CONFIG", "./server_configs/config_dev.toml")
 	}
 
 	if _, err := toml.DecodeFile(configPath, &config.C); err != nil {
@@ -143,11 +143,11 @@ func initConfig() {
 
 }
 
-func (s *UranusApp) GetContainer() component.Container {
+func (s *GApp) GetContainer() component.Container {
 	return s.component
 }
 
-func (s *UranusApp) RegisterAPIRouter(f func(component.Container, iris.Party)) {
+func (s *GApp) RegisterAPIRouter(f func(component.Container, iris.Party)) {
 
 	if s.servers[consts.HttpServer] == nil {
 		return
@@ -157,7 +157,7 @@ func (s *UranusApp) RegisterAPIRouter(f func(component.Container, iris.Party)) {
 
 }
 
-func (s *UranusApp) RegisterMqcWorker(topic string, handler workers.HandlerFunc) {
+func (s *GApp) RegisterMqcWorker(topic string, handler workers.HandlerFunc) {
 
 	if s.servers[consts.MqcServer] == nil {
 		return
@@ -166,7 +166,7 @@ func (s *UranusApp) RegisterMqcWorker(topic string, handler workers.HandlerFunc)
 	s.servers[consts.MqcServer].RegisterService(mqc.MqcHandlers{topic: handler})
 }
 
-func (s *UranusApp) RegisterCronJob(name string, cronStr string, disable bool, handler cron.Handler) {
+func (s *GApp) RegisterCronJob(name string, cronStr string, disable bool, handler cron.Handler) {
 	if s.servers[consts.CronServer] == nil {
 		return
 	}
@@ -178,7 +178,7 @@ func (s *UranusApp) RegisterCronJob(name string, cronStr string, disable bool, h
 		Handler: handler}, s.Logger))
 }
 
-func (s *UranusApp) RegisterRpcService(sc ...interface{}) {
+func (s *GApp) RegisterRpcService(sc ...interface{}) {
 
 	if s.servers[consts.RpcServer] == nil {
 		return
@@ -187,7 +187,7 @@ func (s *UranusApp) RegisterRpcService(sc ...interface{}) {
 	s.servers[consts.RpcServer].RegisterService(sc...)
 }
 
-func (s *UranusApp) RegisterNsqHandler(topic, channel string, handler nsq_consume.RegistryNsqConsumerHandlerFunc, opts ...nsq_consume.ConsumerOption) {
+func (s *GApp) RegisterNsqHandler(topic, channel string, handler nsq_consume.RegistryNsqConsumerHandlerFunc, opts ...nsq_consume.ConsumerOption) {
 	if s.servers[consts.NsqConsumeServer] == nil {
 		return
 	}
@@ -200,11 +200,11 @@ func (s *UranusApp) RegisterNsqHandler(topic, channel string, handler nsq_consum
 	})
 }
 
-func (s *UranusApp) RegisterMidJob(f func(component.Container)) {
+func (s *GApp) RegisterMidJob(f func(component.Container)) {
 	s.midJobs = append(s.midJobs, f)
 }
 
-func (s *UranusApp) start() {
+func (s *GApp) start() {
 
 	for _, v := range s.servers {
 		if err := v.Start(); err != nil {
@@ -244,7 +244,7 @@ LOOP:
 	time.Sleep(time.Second)
 }
 
-func (s *UranusApp) RegisterWs(path string, handler ws.Handler) {
+func (s *GApp) RegisterWs(path string, handler ws.Handler) {
 	if handler == nil || len(path) == 0 {
 		return
 	}
@@ -254,7 +254,7 @@ func (s *UranusApp) RegisterWs(path string, handler ws.Handler) {
 	})
 }
 
-func (s *UranusApp) freeMemory() {
+func (s *GApp) freeMemory() {
 	for {
 		select {
 		case <-s.closeChan:
@@ -265,7 +265,7 @@ func (s *UranusApp) freeMemory() {
 	}
 }
 
-func (s *UranusApp) Close() {
+func (s *GApp) Close() {
 	s.done = true
 	close(s.closeChan)
 	s.interrupt <- syscall.SIGTERM
@@ -276,7 +276,7 @@ func (s *UranusApp) Close() {
 
 }
 
-func (s *UranusApp) Run() (string, error) {
+func (s *GApp) Run() (string, error) {
 
 	if len(os.Args) > 1 {
 		command := os.Args[1]
