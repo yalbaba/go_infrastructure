@@ -2,6 +2,7 @@ package component
 
 import (
 	"fmt"
+	"github.com/yalbaba/go_infrastructure/protos/rpc_servers"
 	"reflect"
 	"time"
 
@@ -30,7 +31,6 @@ import (
 	iuser "github.com/yalbaba/go_infrastructure/models/user"
 	"github.com/yalbaba/go_infrastructure/pkg/errno"
 	"github.com/yalbaba/go_infrastructure/pkg/iris"
-	"github.com/yalbaba/go_infrastructure/protos/test"
 	"github.com/yalbaba/go_infrastructure/utils"
 )
 
@@ -48,7 +48,7 @@ type Container interface {
 	GetRealIP(ctx iris.Context) string
 	RefreshWeight(target string, server string) error
 
-	GetPushStreamServiceClient() push_stream.PushStreamServiceClient
+	GetTestRpcServiceClient() rpc_servers.TestRpcServerServiceClient
 	logger.ILogger
 }
 
@@ -68,7 +68,7 @@ type IComponent interface {
 	GetUserInfo(ctx iris.Context) (*iuser.UserInfo, error)
 	GetRealIP(ctx iris.Context) string
 
-	GetPushStreamServiceClient() push_stream.PushStreamServiceClient
+	GetTestRpcServiceClient() rpc_servers.TestRpcServerServiceClient
 
 	logger.ILogger
 	Close()

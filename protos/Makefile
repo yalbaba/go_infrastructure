@@ -7,4 +7,4 @@ all: test
 #	protoc -I. --go_out=plugins=grpc:. ./push_stream/push_stream.proto
 
 test_rpc_server:
-	protoc -I. --go_out=. ./test_rpc_server.proto
+	protoc -I. --go_out=plugins=grpc:. ./test_rpc_server.proto

@@ -3,8 +3,6 @@ package utils
 import (
 	"fmt"
 
-	"github.com/yalbaba/go_infrastructure/consts"
-
 	"github.com/vmihailenco/msgpack/v5"
 	"github.com/zlyuancn/zdingtalk"
 )
@@ -42,8 +40,4 @@ func DingTalk(notifyType string) error {
 	}
 
 	return nil
-}
-
-func GetPushStreamKey(name string) string {
-	return consts.PushStream + "_" + name
 }

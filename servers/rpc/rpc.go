@@ -59,6 +59,7 @@ func (r *RpcServer) Start() error {
 
 	var addr string
 	if config.C.Debug {
+		r.c.Debug("debug 开启")
 		addr = config.C.RPC.Addr
 	} else {
 		addr = inet.GetLocalIPAddress() + config.C.RPC.Addr
@@ -117,8 +118,8 @@ func (r *RpcServer) RegisterService(sc ...interface{}) {
 		}
 
 		switch t := rs[0].Interface().(type) {
-		case rpc_servers:
-			push_stream.RegisterPushStreamServiceServer(r.server, t)
+		case rpc_servers.TestRpcServerServiceServer:
+			rpc_servers.RegisterTestRpcServerServiceServer(r.server, t)
 		default:
 			r.c.Error("未知的服务类型")
 			return

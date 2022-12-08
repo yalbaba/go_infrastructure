@@ -2,25 +2,26 @@ package go_infrastructure
 
 import (
 	"fmt"
-	app2 "github.com/yalbaba/go_infrastructure/app"
+	"github.com/yalbaba/go_infrastructure/app"
 	"github.com/yalbaba/go_infrastructure/component"
 	"github.com/yalbaba/go_infrastructure/pkg/iris"
+	"github.com/yalbaba/go_infrastructure/rpc_clients"
 	"github.com/yalbaba/go_infrastructure/servers/http"
 	"testing"
 )
 
 func TestHttpServer(t *testing.T) {
-	app := app2.NewGApp(
-		app2.WithPlatName("test"),
-		app2.WithAppName("t"),
-		app2.WithAPI())
+	myapp := app.NewGApp(
+		app.WithPlatName("test"),
+		app.WithAppName("t"),
+		app.WithAPI())
 
-	app.RegisterAPIRouter(func(container component.Container, party iris.Party) {
+	myapp.RegisterAPIRouter(func(container component.Container, party iris.Party) {
 		test := party.Party("/test")
 		test.Get("/123", http.Wrap(testHandler))
 	})
 
-	fmt.Println(app.Run())
+	fmt.Println(myapp.Run())
 }
 
 func testHandler(ctx iris.Context) interface{} {
@@ -30,10 +31,11 @@ func testHandler(ctx iris.Context) interface{} {
 }
 
 func TestRpcServer(t *testing.T) {
-	app := app2.NewGApp(
-		app2.WithPlatName("test"),
-		app2.WithAppName("t"),
-		app2.WithGRPC())
+	myapp := app.NewGApp(
+		app.WithPlatName("test"),
+		app.WithAppName("t"),
+		app.WithGRPC())
 
-	app.RegisterRpcService()
+	myapp.RegisterRpcService(rpc_clients.NewTestRpcServer)
+	fmt.Println(myapp.Run())
 }

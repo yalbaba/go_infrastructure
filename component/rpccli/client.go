@@ -3,6 +3,7 @@ package rpccli
 import (
 	"context"
 	"fmt"
+	"github.com/yalbaba/go_infrastructure/protos/rpc_servers"
 	"strings"
 	"time"
 
@@ -14,11 +15,10 @@ import (
 	"github.com/yalbaba/go_infrastructure/component/rpccli/balancer"
 	"github.com/yalbaba/go_infrastructure/config"
 	"github.com/yalbaba/go_infrastructure/consts"
-	"github.com/yalbaba/go_infrastructure/protos/test"
 )
 
 type IComponentRpcClient interface {
-	GetPushStreamServiceClient() push_stream.PushStreamServiceClient
+	GetTestRpcServiceClient() rpc_servers.TestRpcServerServiceClient
 
 	GetClientByBalancer(names ...string) (r interface{}, err error)
 	GetClient(names ...string) (r interface{}, err error)
@@ -48,7 +48,7 @@ func NewStandardRpcClient(name ...string) IComponentRpcClient {
 	}
 }
 
-func (s *StandardRpcClient) GetPushStreamServiceClient() push_stream.PushStreamServiceClient {
+func (s *StandardRpcClient) GetTestRpcServiceClient() rpc_servers.TestRpcServerServiceClient {
 	var (
 		r   interface{}
 		err error
@@ -56,20 +56,20 @@ func (s *StandardRpcClient) GetPushStreamServiceClient() push_stream.PushStreamS
 	//判断是否开启负载均衡
 	if config.C.Registry.Balancer == "" {
 		//没开启走原来的流程
-		r, err = s.GetClient(consts.PushStream)
+		r, err = s.GetClient(consts.TesRpc)
 		if err != nil {
 			panic(err)
 		}
 	} else {
-		r, err = s.GetClientByBalancer(consts.PushStream)
+		r, err = s.GetClientByBalancer(consts.TesRpc)
 		if err != nil {
 			panic(err)
 		}
 	}
 
-	v, ok := r.(push_stream.PushStreamServiceClient)
+	v, ok := r.(rpc_servers.TestRpcServerServiceClient)
 	if !ok {
-		panic("PushStreamServiceClient not found")
+		panic("TestRpcServerServiceClient not found")
 	}
 	return v
 }
@@ -89,8 +89,8 @@ func (s *StandardRpcClient) GetClientByBalancer(names ...string) (r interface{},
 	s.ccMap[name] = cc
 
 	switch name {
-	case consts.PushStream:
-		r = push_stream.NewPushStreamServiceClient(cc)
+	case consts.TesRpc:
+		r = rpc_servers.NewTestRpcServerServiceClient(cc)
 	}
 
 	return r, nil
@@ -125,8 +125,8 @@ func (s *StandardRpcClient) GetClientBy(name string) (r interface{}, err error) 
 		s.ccMap[name] = cc
 		var r interface{}
 		switch name {
-		case consts.PushStream:
-			r = push_stream.NewPushStreamServiceClient(cc)
+		case consts.TesRpc:
+			r = rpc_servers.NewTestRpcServerServiceClient(cc)
 		}
 
 		return r, nil

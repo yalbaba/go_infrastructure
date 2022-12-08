@@ -4,15 +4,13 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/yalbaba/go_infrastructure/component/rpccli/balancer/smooth_roundrobin"
-	"github.com/yalbaba/go_infrastructure/config"
-	"github.com/yalbaba/go_infrastructure/consts"
-	"github.com/yalbaba/go_infrastructure/utils"
-
 	jsoniter "github.com/json-iterator/go"
 	"github.com/ozonru/etcd/clientv3"
 	logger "github.com/sereiner/library/log"
 	inet "github.com/sereiner/library/net"
+	"github.com/yalbaba/go_infrastructure/component/rpccli/balancer/smooth_roundrobin"
+	"github.com/yalbaba/go_infrastructure/config"
+	"github.com/yalbaba/go_infrastructure/consts"
 	"google.golang.org/grpc/grpclog"
 )
 
@@ -66,7 +64,7 @@ func (r *EtcdRegistry) Register() error {
 	}
 
 	for _, v := range config.C.RegisterServerList {
-		key := consts.PushStream + "_" + v.ServiceName
+		key := consts.TesRpc + "_" + v.ServiceName
 
 		serverInfo := struct {
 			Using int    `json:"using"`
@@ -114,7 +112,7 @@ func (r *EtcdRegistry) Register() error {
 func (r *EtcdRegistry) RefreshWeight(target string, serverName string) error {
 
 	switch target {
-	case consts.PushStream:
+	case consts.TesRpc:
 		err := r.refreshPushStreamWeight(serverName)
 		if err != nil {
 			return err
@@ -143,7 +141,7 @@ func (r *EtcdRegistry) Close() error {
 */
 
 func (r *EtcdRegistry) refreshPushStreamWeight(serverName string) error {
-	key := utils.GetPushStreamKey(serverName)
+	key := "自定义key的规则"
 	resp, err := r.Cli.Get(context.Background(), key)
 	if err != nil {
 		return fmt.Errorf("RefreshWeight 获取target服务失败,err:%v,key:%s", err, key)
