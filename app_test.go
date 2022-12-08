@@ -39,3 +39,10 @@ func TestRpcServer(t *testing.T) {
 	myapp.RegisterRpcService(rpc_clients.NewTestRpcServer)
 	fmt.Println(myapp.Run())
 }
+
+func TestMqcServer(t *testing.T) {
+	myapp := app.NewGApp(
+		app.WithPlatName("test"),
+		app.WithAppName("t"),
+		app.WithMQC())
+}
