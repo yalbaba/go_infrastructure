@@ -14,7 +14,7 @@ import (
 	"github.com/yalbaba/go_infrastructure/component/rpccli/balancer"
 	"github.com/yalbaba/go_infrastructure/config"
 	"github.com/yalbaba/go_infrastructure/consts"
-	"github.com/yalbaba/go_infrastructure/protos/push_stream"
+	"github.com/yalbaba/go_infrastructure/protos/test"
 )
 
 type IComponentRpcClient interface {

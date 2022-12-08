@@ -9,7 +9,7 @@ import (
 	"testing"
 )
 
-func TestNewGApp(t *testing.T) {
+func TestHttpServer(t *testing.T) {
 	app := app2.NewGApp(
 		app2.WithPlatName("test"),
 		app2.WithAppName("t"),
@@ -27,4 +27,13 @@ func testHandler(ctx iris.Context) interface{} {
 	fmt.Println("11111111")
 
 	return nil
+}
+
+func TestRpcServer(t *testing.T) {
+	app := app2.NewGApp(
+		app2.WithPlatName("test"),
+		app2.WithAppName("t"),
+		app2.WithGRPC())
+
+	app.RegisterRpcService()
 }

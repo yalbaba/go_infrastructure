@@ -2,11 +2,10 @@ package rpc
 
 import (
 	"context"
+	"github.com/yalbaba/go_infrastructure/protos/rpc_servers"
 	"net"
 	"reflect"
 	"time"
-
-	"github.com/yalbaba/go_infrastructure/protos/push_stream"
 
 	"github.com/yalbaba/go_infrastructure/component"
 	"github.com/yalbaba/go_infrastructure/config"
@@ -118,7 +117,7 @@ func (r *RpcServer) RegisterService(sc ...interface{}) {
 		}
 
 		switch t := rs[0].Interface().(type) {
-		case push_stream.PushStreamServiceServer:
+		case rpc_servers:
 			push_stream.RegisterPushStreamServiceServer(r.server, t)
 		default:
 			r.c.Error("未知的服务类型")

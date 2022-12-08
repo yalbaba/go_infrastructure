@@ -15,9 +15,9 @@ type Config struct {
 
 	WS WsServer `toml:"ws"`
 
-	RPC GrpcService `toml:"grpc_service"`
+	RPC GrpcService `toml:"rpc"` //当前rpc服务
 
-	Service map[string]Service `toml:"service"`
+	Service map[string]Service `toml:"service"` //其他rpc服务
 
 	DB map[string]DbConfig `toml:"db"`
 

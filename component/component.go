@@ -30,7 +30,7 @@ import (
 	iuser "github.com/yalbaba/go_infrastructure/models/user"
 	"github.com/yalbaba/go_infrastructure/pkg/errno"
 	"github.com/yalbaba/go_infrastructure/pkg/iris"
-	"github.com/yalbaba/go_infrastructure/protos/push_stream"
+	"github.com/yalbaba/go_infrastructure/protos/test"
 	"github.com/yalbaba/go_infrastructure/utils"
 )
 
