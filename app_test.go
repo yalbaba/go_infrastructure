@@ -11,6 +11,7 @@ import (
 	"testing"
 )
 
+// 测试http服务
 func TestHttpServer(t *testing.T) {
 	myapp := app.NewGApp(
 		app.WithPlatName("test"),
@@ -31,6 +32,7 @@ func testHandler(ctx iris.Context) interface{} {
 	return nil
 }
 
+// 测试rpc服务
 func TestRpcServer(t *testing.T) {
 	myapp := app.NewGApp(
 		app.WithPlatName("test"),
@@ -41,6 +43,7 @@ func TestRpcServer(t *testing.T) {
 	fmt.Println(myapp.Run())
 }
 
+// 测试消息队列服务
 func TestMqcServer(t *testing.T) {
 	myapp := app.NewGApp(
 		app.WithPlatName("test"),
@@ -79,12 +82,13 @@ func TestMqcClient(t *testing.T) {
 	myapp.GetContainer().GetRegularMQ().Send("test-topic", []byte(""), 1, 0, 0)
 }
 
+// 测试长连接websocket协议服务
 func TestWsServer(t *testing.T) {
 	myapp := app.NewGApp(
 		app.WithPlatName("test"),
 		app.WithAppName("t"),
 		app.WithWs())
-	myapp.RegisterWs("/test/ws", wsHandler)
+	myapp.RegisterWsRouter("/test/ws", wsHandler)
 
 	fmt.Println(myapp.Run())
 }
@@ -94,4 +98,25 @@ func wsHandler(ctx iris.Context, message []byte) interface{} {
 	fmt.Println("message      ", string(message))
 
 	return nil
+}
+
+// 测试定时任务
+func TestCronJob(t *testing.T) {
+	myapp := app.NewGApp(
+		app.WithPlatName("test"),
+		app.WithAppName("t"),
+		app.WithCron())
+	// @every 1s 1m 1h
+	//myapp.RegisterCronJob("test-cron-job", "@every 10s", false, func(ctx iris.Context) (err error) {
+	//	fmt.Println(111111111)
+	//	return
+	//})
+
+	// cron表达式
+	myapp.RegisterCronJob("test-cron-job", "0 1 * * *", false, func(ctx iris.Context) (err error) {
+		fmt.Println(2222222)
+		return
+	})
+
+	fmt.Println(myapp.Run())
 }

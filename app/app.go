@@ -59,7 +59,7 @@ type IApp interface {
 	RegisterCronJob(name string, cron string, disable bool, handler cron.Handler)
 	RegisterNsqHandler(topic, channel string, handler nsq_consume.RegistryNsqConsumerHandlerFunc, opts ...nsq_consume.ConsumerOption)
 	RegisterMidJob(f func(component.Container))
-	RegisterWs(path string, handler ws.Handler)
+	RegisterWsRouter(path string, handler ws.Handler)
 	GetContainer() component.Container
 
 	Run() (string, error)
@@ -244,7 +244,7 @@ LOOP:
 	time.Sleep(time.Second)
 }
 
-func (s *GApp) RegisterWs(path string, handler ws.Handler) {
+func (s *GApp) RegisterWsRouter(path string, handler ws.Handler) {
 	if handler == nil || len(path) == 0 {
 		return
 	}
