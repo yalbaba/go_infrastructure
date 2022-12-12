@@ -1,7 +1,16 @@
+# 测试配置文件
 debug = true
+
+log_path = "./logs/"
 
 [api]
 addr = ":8080"
 
 [rpc]
 addr = ":8081"
+
+[ws]
+addr = ":8082"
+
+[mq.default]
+address = "127.0.0.1:11300"
