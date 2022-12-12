@@ -2,6 +2,7 @@ package ws
 
 import (
 	sctx "context"
+	inet "github.com/sereiner/library/net"
 	http2 "net/http"
 	"time"
 
@@ -91,7 +92,14 @@ func (w *WsServer) Start() error {
 	w.c.Debug("开始启动 WS 服务器")
 	errChan := make(chan error, 1)
 	go func(ch chan error) {
-		if err := w.dispatcher.Run(iris.Addr(config.C.WS.Addr),
+		var addr string
+		if config.C.Debug {
+			addr = config.C.API.Addr
+		} else {
+			addr = inet.GetLocalIPAddress() + config.C.WS.Addr
+		}
+
+		if err := w.dispatcher.Run(iris.Addr(addr),
 			iris.WithoutBodyConsumptionOnUnmarshal,
 			iris.WithoutPathCorrection,
 			iris.WithOptimizations,
