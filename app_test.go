@@ -44,7 +44,7 @@ func TestRpcServer(t *testing.T) {
 }
 
 // 测试消息队列服务
-func TestMqcServer(t *testing.T) {
+func TestBeanstalkServer(t *testing.T) {
 	myapp := app.NewGApp(
 		app.WithPlatName("test"),
 		app.WithAppName("t"),
@@ -57,7 +57,8 @@ func TestMqcServer(t *testing.T) {
 
 func install(a app.IApp) {
 	t := NewTestMqcService(a.GetContainer())
-	a.RegisterMqcWorker("test-topic", t.TestMqcHandler)
+	a.RegisterBeanstalkWorker("test-topic", t.TestMqcHandler)
+	a.RegisterBeanstalkWorker("test-topic2", t.TestMqcHandler)
 }
 
 type TestMqcService struct {
@@ -71,6 +72,7 @@ func NewTestMqcService(c component.Container) *TestMqcService {
 func (s *TestMqcService) TestMqcHandler(job *workers.Job) {
 	defer job.Delete()
 	s.c.Debug("job begin")
+	s.c.Debug("message   ", string(job.Body))
 }
 
 func TestMqcClient(t *testing.T) {
@@ -79,7 +81,7 @@ func TestMqcClient(t *testing.T) {
 		app.WithAppName("t"),
 		app.WithMQC())
 
-	myapp.GetContainer().GetRegularMQ().Send("test-topic", []byte(""), 1, 0, 0)
+	myapp.GetContainer().GetBeanstalkMQ().Send("test-topic", []byte("123123"), 1, 0, 0)
 }
 
 // 测试长连接websocket协议服务

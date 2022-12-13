@@ -1,12 +1,4 @@
-/*
--------------------------------------------------
-   Author :       zlyuancn
-   date：         2021/1/25
-   Description :
--------------------------------------------------
-*/
-
-package nsq_consume
+package nsq
 
 import (
 	"fmt"
@@ -43,15 +35,15 @@ type ConsumerConfig struct {
 	*config.NsqConsumeConfig
 }
 
-type consumerCli struct {
+type ConsumerCli struct {
 	c        component.Container
 	conf     *ConsumerConfig
 	consumer *nsq.Consumer
 	*consumerOptions
 }
 
-func newConsumer(c component.Container, conf *ConsumerConfig) *consumerCli {
-	consumer := &consumerCli{
+func NewConsumer(c component.Container, conf *ConsumerConfig) *ConsumerCli {
+	consumer := &ConsumerCli{
 		c:               c,
 		conf:            conf,
 		consumerOptions: newConsumerOptions(),
@@ -67,7 +59,7 @@ func newConsumer(c component.Container, conf *ConsumerConfig) *consumerCli {
 	return consumer
 }
 
-func (c *consumerCli) Start() error {
+func (c *ConsumerCli) Start() error {
 	if c.Disable {
 		return nil
 	}
@@ -107,7 +99,7 @@ func (c *consumerCli) Start() error {
 	return c.consumer.ConnectToNSQDs(addresses)
 }
 
-func (c *consumerCli) Close() error {
+func (c *ConsumerCli) Close() error {
 	if c.Disable {
 		return nil
 	}
@@ -117,7 +109,7 @@ func (c *consumerCli) Close() error {
 	return nil
 }
 
-func (c *consumerCli) HandleMessage(message *nsq.Message) error {
+func (c *ConsumerCli) HandleMessage(message *nsq.Message) error {
 	ctx := &Context{
 		Message: message,
 		Topic:   c.conf.Topic,

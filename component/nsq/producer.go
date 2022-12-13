@@ -30,7 +30,7 @@ const (
 )
 
 type IComponentNsq interface {
-	GetNsq(names ...string) *nnsq.Producer
+	GetNsqMQ(names ...string) *nnsq.Producer
 	// 关闭
 	Close()
 }
@@ -54,7 +54,7 @@ func NewNsqProducer() IComponentNsq {
 	return n
 }
 
-func (r *NsqProducer) GetNsq(name ...string) *nnsq.Producer {
+func (r *NsqProducer) GetNsqMQ(name ...string) *nnsq.Producer {
 	return r.conn.GetInstance(r.makeClient, name...).(*instance).producer
 }
 

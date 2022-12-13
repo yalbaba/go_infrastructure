@@ -3,18 +3,17 @@ package app
 import (
 	"flag"
 	"fmt"
+	"github.com/yalbaba/go_infrastructure/component/mq/nsq"
+	"github.com/yalbaba/go_infrastructure/servers/mqc/beanstalk"
 	"github.com/yalbaba/go_infrastructure/servers/ws"
 
 	"github.com/yalbaba/go_infrastructure/component/registry"
 
+	logger "github.com/sereiner/library/log"
 	"github.com/yalbaba/go_infrastructure/consts"
 	"github.com/yalbaba/go_infrastructure/pkg/logfilter"
 	"github.com/yalbaba/go_infrastructure/servers/cron"
 	"github.com/yalbaba/go_infrastructure/servers/http"
-	"github.com/yalbaba/go_infrastructure/servers/mqc"
-	"github.com/yalbaba/go_infrastructure/servers/nsq_consume"
-
-	logger "github.com/sereiner/library/log"
 
 	"github.com/mikegleasonjr/workers"
 
@@ -39,8 +38,8 @@ import (
 	"github.com/yalbaba/go_infrastructure/config"
 	_ "github.com/yalbaba/go_infrastructure/servers/cron"
 	_ "github.com/yalbaba/go_infrastructure/servers/http"
-	_ "github.com/yalbaba/go_infrastructure/servers/mqc"
-	_ "github.com/yalbaba/go_infrastructure/servers/nsq_consume"
+	_ "github.com/yalbaba/go_infrastructure/servers/mqc/beanstalk"
+	_ "github.com/yalbaba/go_infrastructure/servers/mqc/nsq"
 	_ "github.com/yalbaba/go_infrastructure/servers/rpc"
 	_ "github.com/yalbaba/go_infrastructure/servers/ws"
 
@@ -55,9 +54,9 @@ var configPath string
 type IApp interface {
 	RegisterRpcService(...interface{})
 	RegisterAPIRouter(func(component.Container, iris.Party))
-	RegisterMqcWorker(topic string, handler workers.HandlerFunc)
+	RegisterBeanstalkWorker(topic string, handler workers.HandlerFunc)
 	RegisterCronJob(name string, cron string, disable bool, handler cron.Handler)
-	RegisterNsqHandler(topic, channel string, handler nsq_consume.RegistryNsqConsumerHandlerFunc, opts ...nsq_consume.ConsumerOption)
+	RegisterNsqkWorker(topic, channel string, handler nsq.RegistryNsqConsumerHandlerFunc, opts ...nsq.ConsumerOption)
 	RegisterMidJob(f func(component.Container))
 	RegisterWsRouter(path string, handler ws.Handler)
 	GetContainer() component.Container
@@ -157,13 +156,13 @@ func (s *GApp) RegisterAPIRouter(f func(component.Container, iris.Party)) {
 
 }
 
-func (s *GApp) RegisterMqcWorker(topic string, handler workers.HandlerFunc) {
+func (s *GApp) RegisterBeanstalkWorker(topic string, handler workers.HandlerFunc) {
 
-	if s.servers[consts.MqcServer] == nil {
+	if s.servers[consts.BeanstalkServer] == nil {
 		return
 	}
 
-	s.servers[consts.MqcServer].RegisterService(mqc.MqcHandlers{topic: handler})
+	s.servers[consts.BeanstalkServer].RegisterService(beanstalk.MqcHandlers{topic: handler})
 }
 
 func (s *GApp) RegisterCronJob(name string, cronStr string, disable bool, handler cron.Handler) {
@@ -187,12 +186,12 @@ func (s *GApp) RegisterRpcService(sc ...interface{}) {
 	s.servers[consts.RpcServer].RegisterService(sc...)
 }
 
-func (s *GApp) RegisterNsqHandler(topic, channel string, handler nsq_consume.RegistryNsqConsumerHandlerFunc, opts ...nsq_consume.ConsumerOption) {
+func (s *GApp) RegisterNsqkWorker(topic, channel string, handler nsq.RegistryNsqConsumerHandlerFunc, opts ...nsq.ConsumerOption) {
 	if s.servers[consts.NsqConsumeServer] == nil {
 		return
 	}
 
-	s.servers[consts.NsqConsumeServer].RegisterService(&nsq_consume.ConsumerConfig{
+	s.servers[consts.NsqConsumeServer].RegisterService(&nsq.ConsumerConfig{
 		Topic:   topic,
 		Channel: channel,
 		Handler: handler,

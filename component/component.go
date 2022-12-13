@@ -2,6 +2,7 @@ package component
 
 import (
 	"fmt"
+	"github.com/yalbaba/go_infrastructure/component/mq/beanstalk"
 	"github.com/yalbaba/go_infrastructure/protos/rpc_servers"
 	"reflect"
 	"time"
@@ -23,7 +24,6 @@ import (
 	idb "github.com/yalbaba/go_infrastructure/component/db"
 	"github.com/yalbaba/go_infrastructure/component/es"
 	"github.com/yalbaba/go_infrastructure/component/mg"
-	"github.com/yalbaba/go_infrastructure/component/mq"
 	"github.com/yalbaba/go_infrastructure/component/nsq"
 	"github.com/yalbaba/go_infrastructure/component/orm"
 	"github.com/yalbaba/go_infrastructure/component/registry"
@@ -40,9 +40,9 @@ type Container interface {
 	GetRegularGorm(names ...string) (d *gorm.DB)
 	GetRegularCache(names ...string) (d *redis.Client)
 	GetRegularES(names ...string) (d *elastic.Client)
-	GetRegularMQ(names ...string) mq.Mq
+	GetBeanstalkMQ(names ...string) beanstalk.Mq
 	GetRegularMongo(names ...string) (d *mongo.Client)
-	GetNsq(names ...string) *nnsq.Producer
+	GetNsqMQ(names ...string) *nnsq.Producer
 	Bind(ctx iris.Context, obj interface{}) error
 	GetUserInfo(ctx iris.Context) (*iuser.UserInfo, error)
 	GetRealIP(ctx iris.Context) string
@@ -58,9 +58,9 @@ type IComponent interface {
 	GetRegularGorm(names ...string) (d *gorm.DB)
 	GetRegularCache(names ...string) (d *redis.Client)
 	GetRegularES(names ...string) (d *elastic.Client)
-	GetRegularMQ(names ...string) mq.Mq
+	GetBeanstalkMQ(names ...string) beanstalk.Mq
 	GetRegularMongo(names ...string) (d *mongo.Client)
-	GetNsq(names ...string) *nnsq.Producer
+	GetNsqMQ(names ...string) *nnsq.Producer
 	GetRegistry() registry.IRegistry
 	RefreshWeight(target string, server string) error
 
@@ -79,7 +79,7 @@ type component struct {
 	orm.IComponentOrm
 	cache.IComponentCache
 	es.IComponentES
-	mq.IComponentMQ
+	beanstalk.IComponentMQ
 	mg.IComponentMongo
 	nsq.IComponentNsq
 	rpccli.IComponentRpcClient
@@ -93,7 +93,7 @@ func NewComponent(logger *logger.Logger) *component {
 		IComponentOrm:       orm.NewStandardOrm(),
 		IComponentCache:     cache.NewStandardCache(),
 		IComponentES:        es.NewStandardES(),
-		IComponentMQ:        mq.NewStandardMQ(),
+		IComponentMQ:        beanstalk.NewStandardMQ(),
 		IComponentMongo:     mg.NewStandardMg(),
 		IComponentNsq:       nsq.NewNsqProducer(),
 		IComponentRpcClient: rpccli.NewStandardRpcClient(),

@@ -1,12 +1,4 @@
-/*
--------------------------------------------------
-   Author :       zlyuancn
-   date：         2021/3/1
-   Description :
--------------------------------------------------
-*/
-
-package nsq_consume
+package nsq
 
 type consumerOptions struct {
 	Disable         bool // 禁用

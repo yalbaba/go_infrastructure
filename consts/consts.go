@@ -7,7 +7,7 @@ type ServerType uint8
 const (
 	HttpServer ServerType = iota + 1
 	RpcServer
-	MqcServer
+	BeanstalkServer
 	CronServer
 	NsqConsumeServer
 	WsServer
@@ -19,12 +19,12 @@ func (s ServerType) String() string {
 		return "http"
 	case RpcServer:
 		return "grpc"
-	case MqcServer:
-		return "mqc"
+	case BeanstalkServer:
+		return "beanstalk"
 	case CronServer:
 		return "cron"
 	case NsqConsumeServer:
-		return "nsq_consume"
+		return "nsq"
 	case WsServer:
 		return "ws"
 	}

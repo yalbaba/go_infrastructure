@@ -38,7 +38,7 @@ func WithGRPC() Option {
 
 func WithMQC() Option {
 	return func(o *option) {
-		o.ServerTypes[consts.MqcServer] = true
+		o.ServerTypes[consts.BeanstalkServer] = true
 	}
 }
 

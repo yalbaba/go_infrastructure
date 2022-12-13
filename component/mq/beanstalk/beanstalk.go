@@ -1,4 +1,4 @@
-package mq
+package beanstalk
 
 import (
 	"fmt"
@@ -25,7 +25,7 @@ type Mq interface {
 }
 
 type IComponentMQ interface {
-	GetRegularMQ(names ...string) (d Mq)
+	GetBeanstalkMQ(names ...string) (d Mq)
 	GetMQ(names ...string) (d Mq, err error)
 	GetMQBy(name string) (c Mq, err error)
 	SaveMQObject(name string, f func(conf config.MqConfig) (Mq, error)) (bool, Mq, error)
@@ -73,7 +73,7 @@ func (s *StandardMQ) Conn() *beanstalk.Conn {
 	return s.conn
 }
 
-func (s *StandardMQ) GetRegularMQ(names ...string) (d Mq) {
+func (s *StandardMQ) GetBeanstalkMQ(names ...string) (d Mq) {
 	d, err := s.GetMQ(names...)
 	if err != nil {
 		panic(err)

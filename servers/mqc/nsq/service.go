@@ -1,14 +1,7 @@
-/*
--------------------------------------------------
-   Author :       zlyuancn
-   date：         2021/3/1
-   Description :
--------------------------------------------------
-*/
-
-package nsq_consume
+package nsq
 
 import (
+	nsq_cli "github.com/yalbaba/go_infrastructure/component/mq/nsq"
 	"runtime"
 	"sync"
 
@@ -50,18 +43,18 @@ func init() {
 type NsqConsumeServer struct {
 	c         component.Container
 	conf      *config.NsqConsumeConfig
-	consumers []*consumerCli
+	consumers []*nsq_cli.ConsumerCli
 }
 
 func (n *NsqConsumeServer) RegisterService(sc ...interface{}) {
 	for _, v := range sc {
-		conf, ok := v.(*ConsumerConfig)
+		conf, ok := v.(*nsq_cli.ConsumerConfig)
 		if !ok {
 			n.c.Fatal("nsq消费服务注入类型错误, 它必须能转为 *nsqc.ConsumerConfig")
 		}
 		conf.NsqConsumeConfig = n.conf
 
-		consumer := newConsumer(n.c, conf)
+		consumer := nsq_cli.NewConsumer(n.c, conf)
 		n.consumers = append(n.consumers, consumer)
 	}
 }
@@ -81,7 +74,7 @@ func (n *NsqConsumeServer) Close() error {
 	var wg sync.WaitGroup
 	wg.Add(len(n.consumers))
 	for _, consumer := range n.consumers {
-		go func(consumer *consumerCli) {
+		go func(consumer *nsq_cli.ConsumerCli) {
 			defer wg.Done()
 			_ = consumer.Close()
 		}(consumer)

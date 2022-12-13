@@ -1,4 +1,4 @@
-package mqc
+package beanstalk
 
 import (
 	"sync"
@@ -14,24 +14,24 @@ import (
 
 type MqcHandlers map[string]workers.HandlerFunc
 
-type MqcServer struct {
+type BeanstalkServer struct {
 	workMux *workers.WorkMux
 	c       component.Container
 	lock    sync.Mutex
 }
 
-func (m *MqcServer) GetServerType() consts.ServerType {
-	return consts.MqcServer
+func (m *BeanstalkServer) GetServerType() consts.ServerType {
+	return consts.BeanstalkServer
 }
 
-func NewMqcServer(c component.Container) *MqcServer {
-	return &MqcServer{
+func NewBeanstalkServer(c component.Container) *BeanstalkServer {
+	return &BeanstalkServer{
 		workMux: workers.NewWorkMux(),
 		c:       c,
 	}
 }
 
-func (m *MqcServer) RegisterService(sc ...interface{}) {
+func (m *BeanstalkServer) RegisterService(sc ...interface{}) {
 
 	jm, ok := sc[0].(MqcHandlers)
 	if !ok {
@@ -45,11 +45,14 @@ func (m *MqcServer) RegisterService(sc ...interface{}) {
 	}
 }
 
-func (m *MqcServer) Start() error {
+func (m *BeanstalkServer) Start() error {
 
 	m.c.Debug("开始启动 MQC 服务器...")
 	errChan2 := make(chan error, 1)
 	go func(errChan2 chan error) {
+		for _, topic := range m.workMux.Tubes() {
+			m.c.Debug("开始监听 " + topic)
+		}
 		if err := workers.ConnectAndWork("tcp", config.C.MQ["default"].Address, m.workMux); err != nil {
 			errChan2 <- err
 		}
@@ -65,17 +68,17 @@ func (m *MqcServer) Start() error {
 	return nil
 }
 
-func (m *MqcServer) Close() error {
+func (m *BeanstalkServer) Close() error {
 	return nil
 }
 
-type mqcServerAdapter struct {
+type BeanstalkServerAdapter struct {
 }
 
-func (h *mqcServerAdapter) Resolve(c component.Container) servers.IServer {
-	return NewMqcServer(c)
+func (h *BeanstalkServerAdapter) Resolve(c component.Container) servers.IServer {
+	return NewBeanstalkServer(c)
 }
 
 func init() {
-	servers.Register(consts.MqcServer, &mqcServerAdapter{})
+	servers.Register(consts.BeanstalkServer, &BeanstalkServerAdapter{})
 }
